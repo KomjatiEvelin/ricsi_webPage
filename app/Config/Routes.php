@@ -33,7 +33,27 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-
+$routes->match(['get', 'post'], 'sponsors/create', 'Sponsors::create');
+$routes->match(['get', 'post'], 'galery/upload', 'Galery::upload');
+$routes->get('sponsors/(:segment)', 'Sponsors::index');
+$routes->get('sponsors', 'Sponsors::index');
+$routes->get('upload/(:segment)', 'Upload::index');
+$routes->get('upload', 'Upload::index');
+$routes->get('galery/(:segment)', 'Galery::index');
+$routes->get('galery', 'Galery::index');
+$routes->get('credentials/(:segment)', 'Credentials::index');
+$routes->get('credentials', 'Credentials::index');
+$routes->get('mystory/(:segment)', 'MyStory::index');
+$routes->get('mystory', 'MyStory::index');
+$routes->get('sport/(:segment)', 'SportStory::index');
+$routes->get('sport', 'SportStory::index');
+$routes->get('contact', 'Contact::index');
+$routes->get('contact/(:segment)', 'Contact::index');
+$routes->get('login/(:segment)', 'Login::index');
+$routes->get('login', 'Login::index');
+$routes->get('logout/(:segment)', 'Logout::index');
+$routes->get('logout', 'Logout::index');
+$routes->get('(:any)', 'Home::index');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
