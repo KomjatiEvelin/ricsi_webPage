@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class GaleryImages extends Model{
     protected $table='galery';
-    protected $allowedFields=['name','year'];
+    protected $allowedFields=['name','year','info'];
 
     public function getData($id=false){
         if($id===false){
