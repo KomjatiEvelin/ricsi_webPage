@@ -45,6 +45,16 @@ class Galery extends BaseController{
        
     }
 
+    public function addyear(){
+        $model2= new yearInfo();
+        $year=$this->request->getPost('year');
+        $model2->save([
+            'year'=>$year,
+            'text'=>$this->request->getPost('text'),
+    ]); 
+    return redirect()->to( base_url('/upload'))->with('msg', 'Added succesfully');
+    }
+
     public function delete(){
         $model=new GaleryImages();
         if($this->request->getMethod()==='post'){

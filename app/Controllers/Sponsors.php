@@ -49,5 +49,18 @@ class Sponsors extends BaseController{
         }
         $this->index();
     }
+
+    public function updateSuper(){
+        
+        $model=new Sponsor();
+        $id=$this->request->getPost('id');
+        $name=$this->request->getPost('name');
+        $text=$this->request->getpost('text');
+        $logo = $this->request->getFile('logo');
+            $name=$logo->getRandomName();
+            $logo->move(ROOTPATH.'public/images',$name);
+        
+        //TODO UPDATE DATABASE
+    }
    
 }

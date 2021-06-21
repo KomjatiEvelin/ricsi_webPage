@@ -3,12 +3,33 @@
 
 
     <?php foreach ($datas as $datas_item):
+        $size;
+        switch($datas_item['level']){
+            case 1: 
+                $size=20;
+                break;
+            case 2:
+                $size=25;
+                break;
+            case 3:
+                $size=30;
+                break;
+            case 4:
+                $size=35;
+                break;
+            case 5:
+                $size=40;
+                break;
+            default:
+                $size=20;
+                break;
+            }
         if($datas_item['level']<10): ?>
        
         <div class="rounded" style="margin:5px; padding:2px; height:fit-content; width:25%; text-align:center; ">
         <a href="#" style="text-decoration:none; color:black;">
             <h5 style="font-size:2.3vh;"><?= esc($datas_item['name']) ?></h5>
-            <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="width:<?=esc($datas_item['level'])>2? "40%": "25%"; ?>;">
+            <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="width:<?= $size ?>%;">
             <p style="font-size:1.6vh;"><?= esc($datas_item['info']) ?></p>
             <p style="color:blue; font-size:1.6vh;">... Részletek</p>
             <?php if(session()->get('username')=="admin"){

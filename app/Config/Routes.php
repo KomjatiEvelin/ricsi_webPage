@@ -35,6 +35,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->match(['get', 'post'], 'sponsors/create', 'Sponsors::create');
 $routes->match(['get', 'post'], 'galery/upload', 'Galery::upload');
+$routes->match(['get', 'post'], 'galery/addyear', 'Galery::addyear');
 $routes->get('sponsors/(:segment)', 'Sponsors::index');
 $routes->get('sponsors', 'Sponsors::index');
 $routes->get('upload/(:segment)', 'Upload::index');

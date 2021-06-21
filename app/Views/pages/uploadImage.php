@@ -4,7 +4,12 @@
             <form class="card p-2 m-3 rounded" method="post" enctype="multipart/form-data" action="/galery/upload">
                 <div class="form-group">
                     <label for="yearBox" style="font-size:1.8vh;">Év</label>
-                    <input type="number" class="form-control" name="year" placeholder="Mikor készült?" min="2000" required>
+                    <br/>
+                    <select name="year" required>
+                    <?php foreach ($years as $years_item): ?>
+                            <option value="<?php echo $years_item['year']; ?>"><?php echo $years_item['year']; ?></option>
+                            <?php endforeach; ?>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="fileBox" style="font-size:1.8vh;">Kép</label>
