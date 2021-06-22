@@ -16,5 +16,10 @@ class AdminAccount extends Model{
                     ->first();
     }
 
+    public function modifyPwd($pwd,$uname){
+
+        return $this->update(['passwd'=>$pwd])
+                    ->where(['uname'=>$uname]);
+    }
 
 }

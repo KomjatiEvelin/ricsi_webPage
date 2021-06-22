@@ -26,7 +26,7 @@
             }
         if($datas_item['level']<10): ?>
        
-        <div class="rounded" style="margin:5px; padding:2px; height:fit-content; width:25%; text-align:center; ">
+        <div class="rounded" onclick="openModal(<?php echo $datas_item['id'] ?>);" style="margin:5px; padding:2px; height:fit-content; width:25%; text-align:center; ">
         <a href="#" style="text-decoration:none; color:black;">
             <h5 style="font-size:2.3vh;"><?= esc($datas_item['name']) ?></h5>
             <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="width:<?= $size ?>%;">
@@ -44,7 +44,15 @@
             ?>
             </a>
         </div>
+        <div id="myModal<?= $datas_item['id'] ?>" class="modal">
+            <span class="close cursor" onclick="closeModal(<?php echo $datas_item['id'] ?>)">&times;</span>
+            <div class="modal-content">
+            <?php $key = array_search($datas_item['id'], array_column($datas, 'id')); ?>
+            <h5><?php echo $datas[$key]['name'] ?></h5>
+            </div>
+        </div>
         <?php endif; endforeach; ?>
+
 
 <?php else : ?>
 
@@ -54,3 +62,61 @@
 
 <?php endif; ?>
 </div>
+
+<style>
+
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  z-index: 1;
+  padding-top: 100px;
+  width: 50%;
+  height: 50%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+  display: none;
+}
+
+</style>
+<script>
+// Open the Modal
+function openModal(id) {
+  let modalName="myModal"+id;
+  document.getElementById(modalName).style.display = "block";
+}
+
+// Close the Modal
+function closeModal(id) {
+  let modalName="myModal"+id;
+  document.getElementById(modalName).style.display = "none";
+}
+</script>
