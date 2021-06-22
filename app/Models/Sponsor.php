@@ -19,6 +19,10 @@ class Sponsor extends Model{
                     ->first();
     }
 
+    public function updateSuper($name,$text,$id){
+        return $this->update($id,['name'=>$name,'info'=>$text,]);
+    }
+
     public function deleteData($id){
         return $this->delete($id);
     }

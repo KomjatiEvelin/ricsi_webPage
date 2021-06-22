@@ -24,10 +24,10 @@
             <h5><?php echo $datas[$key]['name'] ?> szerkesztése</h5>
             <form class="rounded" method="post" action="/sponsors/update">
             <input type="hidden" value="<?php echo $datas_item['id']; ?>" name="id">
-            <input type="text" value="<?php echo $datas_item['name']; ?>" name="nameBox">
+            <input type="text" value="<?php echo $datas_item['name']; ?>" name="name">
             <div class="form-group">
                     <label for="infoBox" style="font-size:1.8vh;">Rövid leírás</label>
-                    <textarea class="form-control" name="info"  value="<?php echo $datas_item['info']; ?>"></textarea>
+                    <textarea class="form-control" name="text"><?php echo $datas_item['info']; ?></textarea>
                 </div>
                 <button type="submit" class="btn btn-dark" style="font-size:1.8vh;">Ment</button>
             </form>      
