@@ -26,12 +26,12 @@
             }
         if($datas_item['level']<10): ?>
        
-        <div class="rounded" onclick="openModal(<?php echo $datas_item['id'] ?>);" style="margin:5px; padding:2px; height:fit-content; width:25%; text-align:center; ">
-        <a href="#" style="text-decoration:none; color:black;">
+        <div class="rounded"  style="margin:5px; padding:2px; height:fit-content; width:25%; text-align:center;">
+        <div onclick="openModal(<?php echo $datas_item['id'] ?>);">
             <h5 style="font-size:2.3vh;"><?= esc($datas_item['name']) ?></h5>
             <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="width:<?= $size ?>%;">
-            <p style="font-size:1.6vh;"><?= esc($datas_item['info']) ?></p>
-            <p style="color:blue; font-size:1.6vh;">... Részletek</p>
+            <p style="font-size:1.6vh; overflow:hidden; word-break: break-all; height:5vh;"><?= esc($datas_item['info']) ?></p>
+            <p style="color:blue; font-size:1.6vh;">... Részletek</p></div>
             <?php if(session()->get('username')=="admin"){
                echo '<form class="rounded" method="post" action="/sponsors/delete">
                        
@@ -42,13 +42,15 @@
                     </form>';
                 }
             ?>
-            </a>
+            
         </div>
         <div id="myModal<?= $datas_item['id'] ?>" class="modal">
             <span class="close cursor" onclick="closeModal(<?php echo $datas_item['id'] ?>)">&times;</span>
             <div class="modal-content">
             <?php $key = array_search($datas_item['id'], array_column($datas, 'id')); ?>
             <h5><?php echo $datas[$key]['name'] ?></h5>
+            <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="width:<?= $size ?>%;">
+            <p><?php echo $datas[$key]['info'] ?></p>
             </div>
         </div>
         <?php endif; endforeach; ?>
