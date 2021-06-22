@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-
 <body class="text-white" style="height:100%; padding:0px; margin:0px; overflow:hidden; background-image:url('<?= base_url(); ?>/images/background.jpg'); background-size:cover;" >
 <div class="page" style="height:100%; padding:0px; margin:0px; display:flex; flex-flow:column nowrap;">
 <div class="header p-3 m-2 rounded bg-dark text-white" style="flex: 0 0 auto;">
