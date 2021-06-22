@@ -51,7 +51,7 @@ class Login extends BaseController{
         if($model->getUser(session()->get('username'))['passwd']==md5($oldPwd)){
             if($newPwd==$newPwdRepeat){
                 $model->modifyPwd(md5($newPwd),session()->get('username'));
-                return redirect()->to( base_url('/upload'))->with('msg', 'Added succesfully');
+                return redirect()->to( base_url('/upload'))->with('msg', 'Changed succesfully');
             }
         }
         else return redirect()->to( base_url('/upload'))->with('msg', 'Failed');

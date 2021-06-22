@@ -18,8 +18,7 @@ class AdminAccount extends Model{
 
     public function modifyPwd($pwd,$uname){
 
-        return $this->update(['passwd'=>$pwd])
-                    ->where(['uname'=>$uname]);
+        return $this->where('uname',$uname)->set(['passwd'=>$pwd])->update();
     }
 
 }

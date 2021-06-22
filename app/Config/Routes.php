@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->match(['get', 'post'], 'login/modifypwd', 'Login::modifyPwd');
 $routes->match(['get', 'post'], 'sponsors/create', 'Sponsors::create');
 $routes->match(['get', 'post'], '/sponsors/update', 'Sponsors::updateSuper');
 $routes->match(['get', 'post'], 'galery/upload', 'Galery::upload');
