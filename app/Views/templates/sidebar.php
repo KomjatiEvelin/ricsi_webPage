@@ -1,5 +1,16 @@
 <div class="sidebar p-0 mr-2" style="color:grey; height:100%; width:20%; overflow-y: hidden; flex:100%;">
+<script>
+function openModalID(id) {
+  let modalName="myModal"+id;
+  document.getElementById(modalName).style.display = "block";
+}
 
+// Close the Modal
+function closeModalID(id) {
+  let modalName="myModal"+id;
+  document.getElementById(modalName).style.display = "none";
+}
+</script>
 <?php 
     $db=0;
     foreach ($datas as $datas_item): 
@@ -13,24 +24,24 @@
         </div>
         <p style="font-weight:bold; font-size:1.8vh;"><?= esc($datas_item['info']) ?></p>
         <?php if(session()->get('username')=="admin"){
-               echo '<button type="submit" class="btn btn-danger" onclick="openModal('.$datas_item["id"].');" user-id="'.$datas_item["id"].'">Szerkeszt</button>';
+               echo '<button type="submit" class="btn btn-danger" onclick="openModalID('.$datas_item["id"].');">Szerkeszt</button>';
                 }
             ?>
         </div>
         <div id="myModal<?= $datas_item['id'] ?>" class="modal">
-            <span class="close cursor" onclick="closeModal(<?php echo $datas_item['id'] ?>)">&times;</span>
+            <span class="close cursor" onclick="closeModalID(<?php echo $datas_item['id'] ?>)">&times;</span>
             <div class="modal-content">
-            <?php $key = array_search($datas_item['id'], array_column($datas, 'id')); ?>
-            <h5><?php echo $datas[$key]['name'] ?> szerkesztése</h5>
-            <form class="rounded" method="post" action="/sponsors/update">
-            <input type="hidden" value="<?php echo $datas_item['id']; ?>" name="id">
-            <input type="text" value="<?php echo $datas_item['name']; ?>" name="name">
-            <div class="form-group">
+              <?php $key = array_search($datas_item['id'], array_column($datas, 'id')); ?>
+              <h5><?php echo $datas[$key]['name'] ?> szerkesztése</h5>
+              <form class="rounded" method="post" action="/sponsors/update">
+                <input type="hidden" value="<?php echo $datas_item['id']; ?>" name="id">
+                <input type="text" value="<?php echo $datas_item['name']; ?>" name="name">
+                <div class="form-group">
                     <label for="infoBox" style="font-size:1.8vh;">Rövid leírás</label>
                     <textarea class="form-control" name="text"><?php echo $datas_item['info']; ?></textarea>
                 </div>
                 <button type="submit" class="btn btn-dark" style="font-size:1.8vh;">Ment</button>
-            </form>      
+              </form>  
             
             
             </div>
@@ -49,8 +60,8 @@
   display: none;
   z-index: 1;
   padding-top: 100px;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -91,16 +102,3 @@
 }
 
 </style>
-<script>
-// Open the Modal
-function openModal(id) {
-  let modalName="myModal"+id;
-  document.getElementById(modalName).style.display = "block";
-}
-
-// Close the Modal
-function closeModal(id) {
-  let modalName="myModal"+id;
-  document.getElementById(modalName).style.display = "none";
-}
-</script>

@@ -10,7 +10,7 @@
         <h5 style="text-align:center; font-size:2.2vh;"><?= esc($datas_item['name']) ?></h5>
         <p id="sponsor<?php echo $datas_item['id'];?>" style="display:none;" style="font-weight:bold; font-size:1.8vh; "><?= esc($datas_item['info']) ?></p>
         <?php if(session()->get('username')=="admin"){
-               echo '<button type="submit" style="display:none;" class="btn btn-danger" onclick="openModal('.$datas_item["id"].');" user-id="'.$datas_item["id"].'">Szerkeszt</button>';
+               echo '<button type="submit" class="btn btn-danger" onclick="openModalMobil('.$datas_item["id"].');" user-id="'.$datas_item["id"].'">Szerkeszt</button>';
                 }
 
                 #TODO, kis kép a név mellé
@@ -19,8 +19,8 @@
             
     </div>
 
-        <div id="myModal<?= $datas_item['id'] ?>" class="modal">
-            <span class="close cursor" onclick="closeModal(<?php echo $datas_item['id'] ?>)">&times;</span>
+        <div id="mymobilModal<?= $datas_item['id'] ?>" class="modal">
+            <span class="close cursor" onclick="closeModalMobil(<?php echo $datas_item['id'] ?>)">&times;</span>
             <div class="modal-content">
             <?php $key = array_search($datas_item['id'], array_column($datas, 'id')); ?>
             <h5><?php echo $datas[$key]['name'] ?> szerkesztése</h5>
@@ -98,14 +98,14 @@
 </style>
 <script>
 // Open the Modal
-function openModal(id) {
-  let modalName="myModal"+id;
+function openModalMobil(id) {
+  let modalName="mymobilModal"+id;
   document.getElementById(modalName).style.display = "block";
 }
 
 // Close the Modal
-function closeModal(id) {
-  let modalName="myModal"+id;
+function closeModalMobil(id) {
+  let modalName="mymobilModal"+id;
   document.getElementById(modalName).style.display = "none";
 }
 

@@ -73,8 +73,8 @@
   display: none;
   z-index: 1;
   padding-top: 100px;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.8);
 }
