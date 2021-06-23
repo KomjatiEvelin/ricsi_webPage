@@ -18,6 +18,7 @@
     <h1 class="text-center" style="font-size:4vh;"><?= esc($title) ?></h1>
 </div>
 <?php echo view('templates/navbar.php'); ?>
+<?php echo view('templates/mobileSuperSponsors'); ?>
 <?php if (session('msg')) : ?>
      <div class="alert alert-info alert-dismissible">
          <?= session('msg') ?>
@@ -25,6 +26,8 @@
      </div>
  <?php endif ?>
 
+
 <div class="mr-2 ml-2 d-flex flex-column flex-wrap" style="flex:100%; overflow:hidden; align-content: flex-start;">
     <?php echo view('templates/sidebar.php'); ?>
-    <div class="d-flex flex-row flex-wrap justify-content-center" style="flex:100%; width:80%; overflow-y:auto;">
+    <div id="container" class=" d-flex flex-row flex-wrap justify-content-center" style="flex:100%; width:80%; overflow-y:auto;">
+

@@ -13,7 +13,6 @@
         <br/>Naponta személyi edző irányítása mellett végzem erőnléti felkészüléseim otthonomban. A legszükségesebb sportfelszereléseim rendelkezésemre állnak.
         <br/><br/>A 2020-as évben lehetőséget kaptam arra, hogy egy nagy álom kézzelfogható távolságba kerüljön. Fábián Attila a Magyar Síszövetség és a Magyar Paralimpiai Bizottség szakágvezetője
         és Klausmann Viktor, egyesületem elnöke segítségével lehetőségem nyílt arra, hogy a magyar mezőnyben klasszifikáljanak és ezzel a 2026-os téli Paralimpián való részvétel lehetővé váljon számomra.
-    </h6>
-     
-        
+    </h6>  
 </div>
+
