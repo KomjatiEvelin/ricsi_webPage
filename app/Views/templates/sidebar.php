@@ -84,6 +84,12 @@
   display: none;
 }
 
+@media only screen and (max-width: 800px) {
+    .sidebar{
+          display:none;
+      }
+}
+
 </style>
 <script>
 // Open the Modal
