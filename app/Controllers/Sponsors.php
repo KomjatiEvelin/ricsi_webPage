@@ -56,14 +56,26 @@ class Sponsors extends BaseController{
         $id=$this->request->getPost('id');
         $name=$this->request->getPost('name');
         $text=$this->request->getpost('text');
-        /*$logo = $this->request->getFile('logo');
-            $name=$logo->getRandomName();
-            $logo->move(ROOTPATH.'public/images',$name);*/
-        
-        //TODO UPDATE DATABASE
-        $model->updateSuper($name,$text,$id);
+        $image = $this->request->getFile('image');
+        if(is_file($image)){
+            $imgname=$image->getRandomName();
+            $image->move(ROOTPATH.'public/images',$imgname);
+            $model->updateSuperWithImg($name,$imgname,$text,$id);
+        }
+        else
+        {
+            $model->updateSuper($name,$text,$id);
+        }
         
         return redirect()->to( base_url('/upload'))->with('msg', 'Added succesfully');
     }
    
+    public function deleteSuper(){
+        $model=new Sponsor();
+        $id=$this->request->getPost('id');
+        if($this->request->getMethod()==='post'){
+            $model->updateSuperWithImg("","NULL","",$id);
+        }
+        $this->index();
+    }
 }

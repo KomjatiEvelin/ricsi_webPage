@@ -46,10 +46,10 @@
         </div>
         <div id="myModal<?= $datas_item['id'] ?>" class="modal">
             <span class="close cursor" onclick="closeModal(<?php echo $datas_item['id'] ?>)">&times;</span>
-            <div class="modal-content">
+            <div class="modal-content" style="text-align:center;">
             <?php $key = array_search($datas_item['id'], array_column($datas, 'id')); ?>
             <h5><?php echo $datas[$key]['name'] ?></h5>
-            <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="width:<?= $size ?>%;">
+            <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="margin-left: auto; margin-right: auto; width:15%;">
             <p><?php echo $datas[$key]['info'] ?></p>
             </div>
         </div>
@@ -68,7 +68,6 @@
 <style>
 
 
-/* The Modal (background) */
 .modal {
   display: none;
   z-index: 1;
@@ -79,15 +78,16 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Modal Content */
+
 .modal-content {
   position: relative;
   margin: auto;
   padding: 0;
-  width: 90%;
+  width: 70%;
+  background-color: rgba(255, 255, 255, 0.8);
+  overflow-y:auto;
 }
 
-/* The Close Button */
 .close {
   color: white;
   position: absolute;
@@ -102,13 +102,8 @@
   text-decoration: none;
   cursor: pointer;
 }
-
-/* Hide the slides by default */
-.mySlides {
-  display: none;
-}
-
 </style>
+
 <script>
 // Open the Modal
 function openModal(id) {

@@ -23,6 +23,10 @@ class Sponsor extends Model{
         return $this->update($id,['name'=>$name,'info'=>$text,]);
     }
 
+    public function updateSuperWithImg($name,$imageName,$text,$id){
+        return $this->update($id,['name'=>$name,'img'=>$imageName,'info'=>$text,]);
+    }
+
     public function deleteData($id){
         return $this->delete($id);
     }
