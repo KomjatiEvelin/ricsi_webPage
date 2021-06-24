@@ -50,7 +50,7 @@
         }
         
     }
-}
+
 </style>
 <div class=" ml-2 mr-2 navbar rounded navbar-light bg-light" id="desktopnav" style="font-size:2.2vh;">
     <a style="text-decoration:none; color:black;" href="/home">Kezdőlap</a>
