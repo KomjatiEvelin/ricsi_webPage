@@ -35,34 +35,25 @@ foreach ($years as $years_item): ?>
 <?php  endif; endforeach; endforeach;?>
 <div id="myModal" class="modal">
   <span class="close cursor" onclick="closeModal()">&times;</span>
-  <div class="modal-content">
+  <div class="modal-content" style=" height:90%; width:90%;">
   <?php foreach ($images as $images_item): ?>
-    <div class="mySlides">
-      <img src="<?= base_url();?>/galeryImages/<?= esc($images_item['name'])?>" style="max-width:80vw; max-height:80vh">
+    <div class="mySlides" style=" max-height:90%; max-width:90%; margin-left:auto; margin-right:auto; margin-top:auto; margin-bottom:auto;">
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <img src="<?= base_url();?>/galeryImages/<?= esc($images_item['name'])?>" style="max-width:100%; max-height:100%;">
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-
-    <!-- Next/previous controls -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
     
-    <?php endforeach; ?>
+  <?php endforeach; ?>
    
   </div>
 </div>
-   
 </div>
 
 <style>
 
-
-/* The Modal (background) */
 .modal {
   display: none;
   z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -71,11 +62,7 @@ foreach ($years as $years_item): ?>
 
 /* Modal Content */
 .modal-content {
-  position: relative;
-  margin: auto;
-  padding: 0;
-  width: 90%;
-  max-width: 1200px;
+  background-color: black;
 }
 
 /* The Close Button */
@@ -95,12 +82,10 @@ foreach ($years as $years_item): ?>
   cursor: pointer;
 }
 
-/* Hide the slides by default */
 .mySlides {
   display: none;
 }
 
-/* Next & previous buttons */
 .prev,
 .next {
   cursor: pointer;
@@ -116,15 +101,9 @@ foreach ($years as $years_item): ?>
   border-radius: 0 3px 3px 0;
   user-select: none;
   -webkit-user-select: none;
+  background-color: rgba(255,255,255,0.8);
 }
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
@@ -155,11 +134,6 @@ showSlides(slideIndex);
 // Next/previous controls
 function plusSlides(n) {
   showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
