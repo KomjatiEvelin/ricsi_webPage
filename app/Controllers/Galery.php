@@ -63,4 +63,12 @@ class Galery extends BaseController{
         unlink(ROOTPATH.'public/galeryImages/'.$this->request->getPost('name'));
         return redirect()->to( base_url('/galery'))->with('msg', 'Deleted succesfully');
     }
+
+    public function deleteYear(){
+        $model=new yearInfo();
+        if($this->request->getMethod()==='post'){
+            $model->deleteData($this->request->getPost('year'));
+        }
+        return redirect()->to( base_url('/galery'))->with('msg', 'Deleted succesfully');
+    }
 }

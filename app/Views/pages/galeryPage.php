@@ -3,8 +3,16 @@
 foreach ($years as $years_item): ?>
     <h3 style="width:100%; text-align:center; height:fit-content; font-size:3vh;">
     <?php echo $years_item['year']; ?>
+    <?php if(session()->get('username')=="admin"){
+            echo '<form class="rounded" method="post" action="/galery/deleteYear">    
+                    <input type="hidden" value="'.$years_item['year'].'" name="year">
+                    <button type="submit" class="btn btn-danger">Évszám törlése</button>
+                  </form>';
+                }
+            ?>
     </h3>
     <h6 style="width:100%; text-align:center; height:fit-content; font-size:2vh;"><?php if($years_item['text']!=null) echo $years_item['text'];?></h6>
+   
     <?php
     $db=0;
     foreach ($images as $images_item): 
@@ -41,6 +49,8 @@ foreach ($years as $years_item): ?>
     <?php endforeach; ?>
    
   </div>
+</div>
+   
 </div>
 
 <style>
@@ -131,12 +141,12 @@ foreach ($years as $years_item): ?>
 <script>
 // Open the Modal
 function openModal() {
-  document.getElementById("myModal").style.display = "block";
+  document.getElementById('myModal').style.display = "block";
 }
 
 // Close the Modal
 function closeModal() {
-  document.getElementById("myModal").style.display = "none";
+  document.getElementById('myModal').style.display = "none";
 }
 
 var slideIndex = 1;

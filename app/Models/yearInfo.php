@@ -20,6 +20,6 @@ class yearInfo extends Model{
     }
 
     public function deleteData($id){
-        return $this->delete($id);
+        return $this->where(['year'=>$id])->delete();
     }
 }
