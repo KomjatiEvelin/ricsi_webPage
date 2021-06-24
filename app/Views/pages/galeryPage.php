@@ -1,8 +1,8 @@
-<div class="content d-flex flex-wrap p-3 mt-2 mb-2 mr-3 rounded justify-content-center" style="min-height:90%; width:100%; color:black; background-color:rgba(255, 255, 255, 0.5);">
+<div class="content p-3 mt-2 mb-2 mr-3 rounded justify-content-center" style="min-height:90%; width:100%; color:black; background-color:rgba(255, 255, 255, 0.5);">
 <?php if (! empty($images) && is_array($images)) :
 foreach ($years as $years_item): ?>
     <h3 style="width:100%; text-align:center; height:fit-content; font-size:3vh;">
-    <?php echo $years_item['year']; ?>
+    <?php echo $years_item['year']; ?></h3>
     <?php if(session()->get('username')=="admin"){
             echo '<form class="rounded" method="post" action="/galery/deleteYear">    
                     <input type="hidden" value="'.$years_item['year'].'" name="year">
@@ -10,17 +10,18 @@ foreach ($years as $years_item): ?>
                   </form>';
                 }
             ?>
-    </h3>
+    
     <h6 style="width:100%; text-align:center; height:fit-content; font-size:2vh;"><?php if($years_item['text']!=null) echo $years_item['text'];?></h6>
    
+    <div style="align-items:center; height:fit-content; width: 100%;">
     <?php
     $db=0;
+  
     foreach ($images as $images_item): 
         $db++;
     if($years_item['year']==$images_item['year']):?>
-    <div style="height:fit-content; width: fit-content;"> 
-    
-    <img onclick="openModal();currentSlide(<?php echo $db ?> )" src="<?= base_url(); ?>/galeryImages/<?= esc($images_item['name'])?>" alt="<?= esc($images_item['name'])?>" style="width:10vw; height:10vh; margin:3px;">
+   
+    <img onclick="openModal();currentSlide(<?php echo $db ?> )" src="<?= base_url(); ?>/galeryImages/<?= esc($images_item['name'])?>" alt="<?= esc($images_item['name'])?>" style="width:10vw; height:5vw; margin:3px;">
        <?php if(session()->get('username')=="admin"){
             echo '<form class="rounded" method="post" action="/galery/delete">    
                     <input type="hidden" value="'.$images_item['id'].'" name="id">
@@ -29,10 +30,12 @@ foreach ($years as $years_item): ?>
                   </form>';
                 }
             ?>
-    </div>
+  
 
            
 <?php  endif; endforeach; endforeach;?>
+</div>
+</div>
 <div id="myModal" class="modal">
   <span class="close cursor" onclick="closeModal()">&times;</span>
   <div class="modal-content" style=" height:90%; width:90%;">
@@ -45,7 +48,7 @@ foreach ($years as $years_item): ?>
     
   <?php endforeach; ?>
    
-  </div>
+  
 </div>
 </div>
 
@@ -134,6 +137,10 @@ showSlides(slideIndex);
 // Next/previous controls
 function plusSlides(n) {
   showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
 }
 
 function showSlides(n) {

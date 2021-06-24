@@ -42,7 +42,6 @@
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 #maincontainer {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */

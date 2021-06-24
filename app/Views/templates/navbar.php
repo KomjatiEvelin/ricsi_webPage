@@ -1,6 +1,4 @@
 <style>
-   
-    
     #mobilenav{
         display:none;
     }
@@ -10,8 +8,7 @@
         display: block;
         font-weight:bold;
     }
-
-
+    
     #hamburger-icon {
         width:70px;
         height:50px;
