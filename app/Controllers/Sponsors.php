@@ -45,7 +45,10 @@ class Sponsors extends BaseController{
     public function delete(){
         $model=new Sponsor();
         if($this->request->getMethod()==='post'){
-            $model->deleteData($this->request->getPost('id'));
+            $id=$this->request->getPost('id');
+            $sponsor=$model->getData($id);
+            unlink('images/'.$sponsor['img']);
+            $model->deleteData($id);
         }
         $this->index();
     }
@@ -60,6 +63,8 @@ class Sponsors extends BaseController{
         if(is_file($image)){
             $imgname=$image->getRandomName();
             $image->move(ROOTPATH.'public/images',$imgname);
+            $sponsor=$model->getData($id);
+            unlink('images/'.$sponsor['img']);
             $model->updateSuperWithImg($name,$imgname,$text,$id);
         }
         else
@@ -73,6 +78,8 @@ class Sponsors extends BaseController{
     public function deleteSuper(){
         $model=new Sponsor();
         $id=$this->request->getPost('id');
+        $sponsor=$model->getData($id);
+        unlink('images/'.$sponsor['img']);
         if($this->request->getMethod()==='post'){
             $model->updateSuperWithImg("","NULL","",$id);
         }

@@ -13,29 +13,31 @@ foreach ($years as $years_item): ?>
     
     <h6 style="width:100%; text-align:center; height:fit-content; font-size:2vh;"><?php if($years_item['text']!=null) echo $years_item['text'];?></h6>
    
-    <div style="align-items:center; height:fit-content; width: 100%;">
-    <?php
-    $db=0;
+    <div style="height:fit-content; width: 100%; vertical-align:middle; text-align:center">
+      <?php
+        $db=0;
   
-    foreach ($images as $images_item): 
-        $db++;
-    if($years_item['year']==$images_item['year']):?>
-   
-    <img onclick="openModal();currentSlide(<?php echo $db ?> )" src="<?= base_url(); ?>/galeryImages/<?= esc($images_item['name'])?>" alt="<?= esc($images_item['name'])?>" style="width:10vw; height:5vw; margin:3px;">
-       <?php if(session()->get('username')=="admin"){
-            echo '<form class="rounded" method="post" action="/galery/delete">    
-                    <input type="hidden" value="'.$images_item['id'].'" name="id">
-                    <input type="hidden" value="'.$images_item['name'].'" name="name">
-                    <button type="submit" class="btn btn-danger">Töröl</button>
-                  </form>';
-                }
-            ?>
-  
+        foreach ($images as $images_item): 
+          $db++;
+          if($years_item['year']==$images_item['year']):?>
+          <?php if(session()->get('username')=="admin"){
+           echo '<div class="container">';
+          } ?>
+            <img onclick="openModal();currentSlide(<?php echo $db ?> )" src="<?= base_url(); ?>/galeryImages/<?= esc($images_item['name'])?>" alt="<?= esc($images_item['name'])?>" style="width:10vw; height:5vw; margin:3px;">
+            <?php if(session()->get('username')=="admin"){
+                    echo '<form method="post" action="/galery/delete">    
+                            <input type="hidden" value="'.$images_item['id'].'" name="id">
+                            <input type="hidden" value="'.$images_item['name'].'" name="name">
+                            <button type="submit" class="btn btn-danger">Töröl</button>
+                          </form>
+                      </div>';
+                  }
+          endif; 
+        endforeach; 
+      endforeach; ?>
+    </div>
+</div>
 
-           
-<?php  endif; endforeach; endforeach;?>
-</div>
-</div>
 <div id="myModal" class="modal">
   <span class="close cursor" onclick="closeModal()">&times;</span>
   <div class="modal-content" style=" height:90%; width:90%;">
@@ -53,6 +55,20 @@ foreach ($years as $years_item): ?>
 </div>
 
 <style>
+
+.container {
+  position: relative;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.container .btn {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  cursor: pointer;
+}
 
 .modal {
   display: none;
