@@ -6,6 +6,9 @@ use App\Models\Sponsor;
 class MyStory extends BaseController
 {
 	public function index(){
+        if(!is_file(APPPATH.'/Views/pages/myStory.php')){
+            throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
+        }
         $model=new Sponsor();
 
         $data=[

@@ -6,6 +6,9 @@ use App\Models\Sponsor;
 class Credentials extends BaseController
 {
 	public function index(){
+        if(!is_file(APPPATH.'/Views/pages/credentialsPage.php')){
+            throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
+        }
         $model=new Sponsor();
 
         $data=[

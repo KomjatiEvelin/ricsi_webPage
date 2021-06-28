@@ -7,6 +7,9 @@ use App\Models\Sponsor;
 class Sponsors extends BaseController{
     
     public function index(){
+        if(!is_file(APPPATH.'/Views/pages/sponsors.php')){
+            throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
+        }
         $model=new Sponsor();
 
         $data=[
@@ -23,7 +26,7 @@ class Sponsors extends BaseController{
 
     public function create()
     {
-       
+       try{
         $name="";
           
             $logo = $this->request->getFile('logo');
@@ -38,51 +41,73 @@ class Sponsors extends BaseController{
                 
             ]);
             return redirect()->to( base_url('/upload'))->with('msg', 'Sikeres hozzáadás');
+        }
+        catch(Exception $e){
+            return redirect()->to( base_url('/upload'))->with('msg', 'Sikertelen hozzáadás'.$e->getMessage());
+        }
         
        
     }
 
     public function delete(){
-        $model=new Sponsor();
-        if($this->request->getMethod()==='post'){
-            $id=$this->request->getPost('id');
-            $sponsor=$model->getData($id);
-            unlink('images/'.$sponsor['img']);
-            $model->deleteData($id);
+
+        try{
+            $model=new Sponsor();
+            if($this->request->getMethod()==='post'){
+                $id=$this->request->getPost('id');
+                $sponsor=$model->getData($id);
+                unlink('images/'.$sponsor['img']);
+                $model->deleteData($id);
+            }
+            return redirect()->to( base_url('/sponsors'))->with('msg', 'Sikeres törlés');
         }
-        $this->index();
+        catch(Excepton $e){
+            return redirect()->to( base_url('/sponsors'))->with('msg', 'Sikertelen törlés'.$e->getMessage());
+        }
+
     }
 
     public function updateSuper(){
         
-        $model=new Sponsor();
-        $id=$this->request->getPost('id');
-        $name=$this->request->getPost('name');
-        $text=$this->request->getpost('text');
-        $image = $this->request->getFile('image');
-        if(is_file($image)){
-            $imgname=$image->getRandomName();
-            $image->move(ROOTPATH.'public/images',$imgname);
-            $sponsor=$model->getData($id);
-            unlink('images/'.$sponsor['img']);
-            $model->updateSuperWithImg($name,$imgname,$text,$id);
+        try{
+            $model=new Sponsor();
+            $id=$this->request->getPost('id');
+            $name=$this->request->getPost('name');
+            $text=$this->request->getpost('text');
+            $image = $this->request->getFile('image');
+            if(is_file($image)){
+                $imgname=$image->getRandomName();
+                $image->move(ROOTPATH.'public/images',$imgname);
+                $sponsor=$model->getData($id);
+                unlink('images/'.$sponsor['img']);
+                $model->updateSuperWithImg($name,$imgname,$text,$id);
+            }
+            else
+            {
+                $model->updateSuper($name,$text,$id);
+            }
+            
+            return redirect()->to( base_url('/upload'))->with('msg', 'Sikeres hozzáadás');
         }
-        else
-        {
-            $model->updateSuper($name,$text,$id);
+        catch(Exception $e){
+            return redirect()->to( base_url('/upload'))->with('msg', 'Sikertelen hozzáadás'.$e->getMessage());
         }
-        
-        return redirect()->to( base_url('/upload'))->with('msg', 'Sikeres hozzáadás');
     }
    
     public function deleteSuper(){
-        $model=new Sponsor();
-        $id=$this->request->getPost('id');
-        $sponsor=$model->getData($id);
-        unlink('images/'.$sponsor['img']);
-        if($this->request->getMethod()==='post'){
-            $model->updateSuperWithImg("","NULL","",$id);
+        
+        try{
+            $model=new Sponsor();
+            $id=$this->request->getPost('id');
+            $sponsor=$model->getData($id);
+            unlink('images/'.$sponsor['img']);
+            if($this->request->getMethod()==='post'){
+                $model->updateSuperWithImg("","NULL","",$id);
+            }
+            return redirect()->to( base_url('/home'))->with('msg', 'Sikeres törlés');
         }
-        $this->index();
+        catch(Excepton $e){
+            return redirect()->to( base_url('/home'))->with('msg', 'Sikertelen törlés'.$e->getMessage());
+        }
     }
 }

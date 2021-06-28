@@ -9,6 +9,9 @@ use App\Models\yearInfo;
 class Galery extends BaseController{
     
     public function index(){
+        if(!is_file(APPPATH.'/Views/pages/galeryPage.php')){
+            throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
+        }
         $model=new Sponsor();
         $model1=new GaleryImages();
         $model2= new yearInfo();
@@ -28,7 +31,7 @@ class Galery extends BaseController{
 
     public function upload()
     {
-       
+       try{
             $images = $this->request->getFiles('image');
             $model=new GaleryImages();
             foreach($images['image'] as $image){
@@ -40,35 +43,60 @@ class Galery extends BaseController{
                 
                 ]);
             }
-            return redirect()->to( base_url('/upload'))->with('msg', 'Added succesfully');
+            return redirect()->to( base_url('/upload'))->with('msg', 'Sikeres feltöltés');
+        }
+        catch(Exception $e){
+            
+            return redirect()->to( base_url('/upload'))->with('msg', 'Sikertelen feltöltés'.$e->getMessage());
+    
+        }
         
        
     }
 
     public function addyear(){
-        $model2= new yearInfo();
-        $year=$this->request->getPost('year');
-        $model2->save([
-            'year'=>$year,
-            'text'=>$this->request->getPost('text'),
-    ]); 
-    return redirect()->to( base_url('/upload'))->with('msg', 'Added succesfully');
+        try{
+                $model2= new yearInfo();
+                $year=$this->request->getPost('year');
+                $model2->save([
+                    'year'=>$year,
+                    'text'=>$this->request->getPost('text'),
+                ]); 
+                return redirect()->to( base_url('/upload'))->with('msg', 'Sikeres hozzáadás');
+               
+            }
+            catch(Excepton $e){
+                return redirect()->to( base_url('/upload'))->with('msg', 'Sikertelen hozzáadás'.$e->getMessage());
+            }
     }
 
     public function delete(){
-        $model=new GaleryImages();
-        if($this->request->getMethod()==='post'){
-            $model->deleteData($this->request->getPost('id'));
+
+        try{
+            $model=new GaleryImages();
+            if($this->request->getMethod()==='post'){
+                $model->deleteData($this->request->getPost('id'));
+            }
+            unlink(ROOTPATH.'public/galeryImages/'.$this->request->getPost('name'));
+            return redirect()->to( base_url('/galery'))->with('msg', 'Sikeres törlés');
         }
-        unlink(ROOTPATH.'public/galeryImages/'.$this->request->getPost('name'));
-        return redirect()->to( base_url('/galery'))->with('msg', 'Deleted succesfully');
+        catch(Excepton $e){
+            return redirect()->to( base_url('/galery'))->with('msg', 'Sikertelen törlés'.$e->getMessage());
+        }
     }
 
     public function deleteYear(){
-        $model=new yearInfo();
-        if($this->request->getMethod()==='post'){
-            $model->deleteData($this->request->getPost('year'));
+
+        try{
+            $model=new yearInfo();
+            if($this->request->getMethod()==='post'){
+                $model->deleteData($this->request->getPost('year'));
+            }
+            return redirect()->to( base_url('/galery'))->with('msg', 'Sikeres törlés');
+            
         }
-        return redirect()->to( base_url('/galery'))->with('msg', 'Deleted succesfully');
+        catch(Excepton $e){
+            return redirect()->to( base_url('/galery'))->with('msg', 'Sikertelen törlés'.$e->getMessage());
+        }
     }
 }

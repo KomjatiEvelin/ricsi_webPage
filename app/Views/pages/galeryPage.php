@@ -23,7 +23,7 @@ foreach ($years as $years_item): ?>
           <?php if(session()->get('username')=="admin"){
            echo '<div class="container">';
           } ?>
-            <img onclick="openModal();currentSlide(<?php echo $db ?> )" src="<?= base_url(); ?>/galeryImages/<?= esc($images_item['name'])?>" alt="<?= esc($images_item['name'])?>" style="width:10vw; height:5vw; margin:3px;">
+            <img onclick="openModal('myImageModal');currentSlide(<?php echo $db ?> )" src="<?= base_url(); ?>/galeryImages/<?= esc($images_item['name'])?>" alt="<?= esc($images_item['name'])?>" style="width:10vw; height:5vw; margin:3px;">
             <?php if(session()->get('username')=="admin"){
                     echo '<form method="post" action="/galery/delete">    
                             <input type="hidden" value="'.$images_item['id'].'" name="id">
@@ -38,8 +38,8 @@ foreach ($years as $years_item): ?>
     </div>
 </div>
 
-<div id="myModal" class="modal">
-  <span class="close cursor" onclick="closeModal()">&times;</span>
+<div id="myImageModal" class="modal">
+  <span class="close cursor" onclick="closeModal('myImageModal')">&times;</span>
   <div class="modal-content" style=" height:90%; width:90%;">
   <?php foreach ($images as $images_item): ?>
     <div class="mySlides" style=" max-height:90%; max-width:90%; margin-left:auto; margin-right:auto; margin-top:auto; margin-bottom:auto;">
@@ -102,16 +102,6 @@ foreach ($years as $years_item): ?>
 </style>
 
 <script>
-// Open the Modal
-function openModal() {
-  document.getElementById('myModal').style.display = "block";
-}
-
-// Close the Modal
-function closeModal() {
-  document.getElementById('myModal').style.display = "none";
-}
-
 var slideIndex = 1;
 showSlides(slideIndex);
 

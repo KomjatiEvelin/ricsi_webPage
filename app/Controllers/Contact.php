@@ -6,6 +6,10 @@ use App\Models\Sponsor;
 class Contact extends BaseController
 {
 	public function index(){
+
+        if(!is_file(APPPATH.'/Views/pages/contactPage.php')){
+            throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
+        }
         $model=new Sponsor();
 
         $data=[
