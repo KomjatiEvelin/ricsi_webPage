@@ -48,13 +48,18 @@ class Login extends BaseController{
         $newPwd=$this->request->getPost('newPwd');
         $newPwdRepeat=$this->request->getPost('newPwdRepeat');
 
-        if($model->getUser(session()->get('username'))['passwd']==md5($oldPwd)){
-            if($newPwd==$newPwdRepeat){
-                $model->modifyPwd(md5($newPwd),session()->get('username'));
-                return redirect()->to( base_url('/upload'))->with('msg', 'Sikeres módosítás');
+        try{
+            if($model->getUser(session()->get('username'))['passwd']==md5($oldPwd)){
+                if($newPwd==$newPwdRepeat){
+                    $model->modifyPwd(md5($newPwd),session()->get('username'));
+                    return redirect()->to( base_url('/upload'))->with('msg', 'Sikeres módosítás');
+                }
             }
+            else return redirect()->to( base_url('/upload'))->with('msg', 'A módosítás nem sikerült');
         }
-        else return redirect()->to( base_url('/upload'))->with('msg', 'A módosítás nem sikerült');
+        catch(\Exception $e){
+            return redirect()->to( base_url('/upload'))->with('msg', 'A módosítás nem sikerült '.$e->getMessage());
+        }
             
     }
 

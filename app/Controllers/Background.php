@@ -15,8 +15,8 @@ class Background extends BaseController{
            
             return redirect()->to( base_url('/home'))->with('msg', 'Sikeres módosítás');
        }
-       catch(Exception $e){
-        return redirect()->to( base_url('/home'))->with('msg', 'Sikertelen módosítás'.$e->getMessage());
+       catch(\Exception $e){
+        return redirect()->to( base_url('/home'))->with('msg', 'Sikertelen módosítás '.$e->getMessage());
        }
           
     }

@@ -45,9 +45,9 @@ class Galery extends BaseController{
             }
             return redirect()->to( base_url('/upload'))->with('msg', 'Sikeres feltöltés');
         }
-        catch(Exception $e){
+        catch(\Exception $e){
             
-            return redirect()->to( base_url('/upload'))->with('msg', 'Sikertelen feltöltés'.$e->getMessage());
+            return redirect()->to( base_url('/upload'))->with('msg', 'Sikertelen feltöltés '.$e->getMessage());
     
         }
         
@@ -65,8 +65,8 @@ class Galery extends BaseController{
                 return redirect()->to( base_url('/upload'))->with('msg', 'Sikeres hozzáadás');
                
             }
-            catch(Excepton $e){
-                return redirect()->to( base_url('/upload'))->with('msg', 'Sikertelen hozzáadás'.$e->getMessage());
+            catch(\Exception $e){
+                return redirect()->to( base_url('/upload'))->with('msg', 'Sikertelen hozzáadás '.$e->getMessage());
             }
     }
 
@@ -80,8 +80,8 @@ class Galery extends BaseController{
             unlink(ROOTPATH.'public/galeryImages/'.$this->request->getPost('name'));
             return redirect()->to( base_url('/galery'))->with('msg', 'Sikeres törlés');
         }
-        catch(Excepton $e){
-            return redirect()->to( base_url('/galery'))->with('msg', 'Sikertelen törlés'.$e->getMessage());
+        catch(\Exception $e){
+            return redirect()->to( base_url('/galery'))->with('msg', 'Sikertelen törlés '.$e->getMessage());
         }
     }
 
@@ -95,8 +95,8 @@ class Galery extends BaseController{
             return redirect()->to( base_url('/galery'))->with('msg', 'Sikeres törlés');
             
         }
-        catch(Excepton $e){
-            return redirect()->to( base_url('/galery'))->with('msg', 'Sikertelen törlés'.$e->getMessage());
+        catch(\Exception $e){
+            return redirect()->to( base_url('/galery'))->with('msg', 'Sikertelen törlés '.$e->getMessage());
         }
     }
 }

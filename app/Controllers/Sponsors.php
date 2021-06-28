@@ -42,7 +42,7 @@ class Sponsors extends BaseController{
             ]);
             return redirect()->to( base_url('/upload'))->with('msg', 'Sikeres hozzáadás');
         }
-        catch(Exception $e){
+        catch(\Exception $e){
             return redirect()->to( base_url('/upload'))->with('msg', 'Sikertelen hozzáadás'.$e->getMessage());
         }
         
@@ -61,7 +61,7 @@ class Sponsors extends BaseController{
             }
             return redirect()->to( base_url('/sponsors'))->with('msg', 'Sikeres törlés');
         }
-        catch(Excepton $e){
+        catch(\Exception $e){
             return redirect()->to( base_url('/sponsors'))->with('msg', 'Sikertelen törlés'.$e->getMessage());
         }
 
@@ -89,7 +89,7 @@ class Sponsors extends BaseController{
             
             return redirect()->to( base_url('/upload'))->with('msg', 'Sikeres hozzáadás');
         }
-        catch(Exception $e){
+        catch(\Exception $e){
             return redirect()->to( base_url('/upload'))->with('msg', 'Sikertelen hozzáadás'.$e->getMessage());
         }
     }
@@ -106,7 +106,7 @@ class Sponsors extends BaseController{
             }
             return redirect()->to( base_url('/home'))->with('msg', 'Sikeres törlés');
         }
-        catch(Excepton $e){
+        catch(\Exception $e){
             return redirect()->to( base_url('/home'))->with('msg', 'Sikertelen törlés'.$e->getMessage());
         }
     }
