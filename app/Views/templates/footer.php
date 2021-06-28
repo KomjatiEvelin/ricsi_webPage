@@ -7,78 +7,102 @@
 </body>
 
 <style>
-@media only screen and (max-width: 800px) {
-        #maincontainer{
-            width:100%!important;
-        }
-    }
+  @media only screen and (max-width: 800px) {
+          #maincontainer{
+              width:100%!important;
+              margin:5px;
+          }
+      }
 
-#maincontainer::-webkit-scrollbar {
-  display: none;
-}
+  #maincontainer::-webkit-scrollbar {
+    display: none;
+  }
 
-#maincontainer {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
+  #maincontainer {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
 
-.modal {
-  display: none;
-  z-index: 1;
-  padding-top: 100px;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.8);
-}
+  .modal {
+    display: none;
+    z-index: 1;
+    padding-top: 100px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
 
 
-.modal-content {
-  position: relative;
-  margin: auto;
-  padding: 5px;
-  width: 80%;
-  background-color: rgba(255,255, 255, 0.8);
-}
+  .modal-content {
+    position: relative;
+    margin: auto;
+    padding: 5px;
+    width: 80%;
+    background-color: rgba(255,255, 255, 0.8);
+  }
 
-.close {
-  color: white;
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  font-weight: bold;
-}
+  .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-weight: bold;
+  }
 
-.close:hover,
-.close:focus {
-  color: #999;
-  text-decoration: none;
-  cursor: pointer;
-}
+  .close:hover,
+  .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
-.mySlides {
-  display: none;
-}
+  .mySlides {
+    display: none;
+  }
 
-.sponsorbar{
+  .sponsorbar{
     display:none;
-}
-@media only screen and (max-width: 800px) {
+  }
+
+  @media only screen and (max-width: 800px) {
     .sponsorbar{
           display:block;
       }
-}
+  }
 
-#mobilenav{
+    #mobilenav{
         display:none;
     }
     #mobilenav a {
-        color: black;
-        padding: 14px 16px;
-        display: block;
-        font-weight:bold;
+      
+      color: black;
+      padding: 14px 16px;
+      display: block;
+      font-weight:bold;
     }
-    
+
+    #hamburger span
+    {
+      display: block;
+      width: 33px;
+      height: 4px;
+      margin: 5px;
+      position: relative;
+      background: white;
+      border-radius: 3px;
+      
+      z-index: 1;
+  
+    }
+
+    #hamburger{
+      position: absolute;
+      top:0;
+      right:0;
+      margin:20px;
+    }
+
     @media only screen and (max-width: 800px) {
         #desktopnav{
             display:none;
@@ -91,20 +115,22 @@
     }
 
     .card-body::-webkit-scrollbar {
-  display: none;
-}
-.card-body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
+      display: none;
+    }
 
-@media only screen and (max-width: 800px) {
-    .sidebar{
-          display:none;
-      }
-}
+    .card-body {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    @media only screen and (max-width: 800px) {
+        .sidebar{
+              display:none;
+          }
+    }
 
 </style>
+
 <script>
 // Open the Modal
 function openModal(id) {

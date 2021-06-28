@@ -2,7 +2,7 @@
 <?php if (! empty($images) && is_array($images)) :
 foreach ($years as $years_item): ?>
     <h3 style="width:100%; text-align:center; height:fit-content; font-size:3vh;">
-    <?php echo $years_item['year']; ?></h3>
+    <?php echo $years_item['year']; ?>
     <?php if(session()->get('username')=="admin"){
             echo '<form class="rounded" method="post" action="/galery/deleteYear">    
                     <input type="hidden" value="'.$years_item['year'].'" name="year">
@@ -10,8 +10,12 @@ foreach ($years as $years_item): ?>
                   </form>';
                 }
             ?>
+    </h3>
     
-    <h6 style="width:100%; text-align:center; height:fit-content; font-size:2vh;"><?php if($years_item['text']!=null) echo $years_item['text'];?></h6>
+    
+    <h6 style="width:100%; text-align:center; height:fit-content; font-size:2vh;">
+    <?php if($years_item['text']!=null) echo $years_item['text'];?></h6>
+    <hr style="border-top:1px solid black; width:70%;">
    
     <div style="height:fit-content; width: 100%; vertical-align:middle; text-align:center">
       <?php
@@ -20,17 +24,14 @@ foreach ($years as $years_item): ?>
         foreach ($images as $images_item): 
           $db++;
           if($years_item['year']==$images_item['year']):?>
-          <?php if(session()->get('username')=="admin"){
-           echo '<div class="container">';
-          } ?>
+          
             <img onclick="openModal('myImageModal');currentSlide(<?php echo $db ?> )" src="<?= base_url(); ?>/galeryImages/<?= esc($images_item['name'])?>" alt="<?= esc($images_item['name'])?>" style="width:10vw; height:5vw; margin:3px;">
             <?php if(session()->get('username')=="admin"){
                     echo '<form method="post" action="/galery/delete">    
                             <input type="hidden" value="'.$images_item['id'].'" name="id">
                             <input type="hidden" value="'.$images_item['name'].'" name="name">
                             <button type="submit" class="btn btn-danger">Töröl</button>
-                          </form>
-                      </div>';
+                          </form>';
                   }
           endif; 
         endforeach; 
@@ -61,20 +62,6 @@ foreach ($years as $years_item): ?>
 </div>
 
 <style>
-
-.container {
-  position: relative;
-}
-
-/* Style the button and place it in the middle of the container/image */
-.container .btn {
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  cursor: pointer;
-}
 
 .prev,
 .next {

@@ -1,4 +1,4 @@
-<div class="sponsorbar p-0 mr-2" style="color:grey; height:fit-content;" >
+<div class="sponsorbar pl-2 pr-2 mr-2" style="color:grey; height:fit-content;" >
 
 <?php 
     $db=0;
@@ -13,16 +13,13 @@
         <p id="sponsor<?php echo $datas_item['id'];?>" style="display:none;" style="font-weight:bold; font-size:1.8vh; "><?= esc($datas_item['info']) ?></p>
         
         <?php if(session()->get('username')=="admin"){
-               echo '<button type="submit" class="btn btn-danger" onclick="openModalMobil('.$datas_item["id"].');" user-id="'.$datas_item["id"].'">Szerkeszt</button>';
-               echo '<form class="rounded" method="post" action="/sponsors/deleteSuper">
-                       
-               <input type="hidden" value="'.$datas_item['id'].'" name="id">
-               
-               <button type="submit" class="btn btn-danger">Töröl</button>
-           
-           </form>';
-     }
-            ?>
+               echo '<button id="editBtn'.$datas_item['id'].'" type="submit" style="display:none;" class="btn btn-danger" onclick="openModalMobil('.$datas_item["id"].');" user-id="'.$datas_item["id"].'">Szerkeszt</button>';
+               echo '<form class="rounded" method="post" action="/sponsors/deleteSuper">   
+                      <input type="hidden" value="'.$datas_item['id'].'" name="id">
+                      <button type="submit" style="display:none;" id="delBtn'.$datas_item['id'].'" class="btn btn-danger">Töröl</button>
+                    </form>';
+              }
+        ?>
 
             
     </div>
@@ -72,14 +69,20 @@ function closeModalMobil(id) {
 function myFunction2(id) {
   var x = document.getElementById("sponsor"+id);
   var y = document.getElementById("img"+id);
+  var z = document.getElementById("editBtn"+id);
+  var w = document.getElementById("delBtn"+id);
   if (x.style.display === "block") {
     x.style.display = "none";
     y.style.display = "none";
+    z.style.display = "none";
+    w.style.display = "none";
     document.getElementById("card1").style.height="fit-content";
     document.getElementById("card2").style.height="fit-content";
   } else {
     x.style.display = "block";
     y.style.display = "block";
+    z.style.display = "block";
+    w.style.display = "block";
     document.getElementById("card2").style.height="fit-content";
   }
 

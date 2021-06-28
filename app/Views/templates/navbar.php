@@ -15,8 +15,10 @@
 </div>
 
 <div id="mobilenav" >
-    <div class="p-1 ml-2 mr-2 rounded bg-light" style="color:black; text-align:center;" href="javascript:void(0);" onclick="myFunction();">
-       <h5>Menü</h5>
+    <div class="p-1 ml-2 mr-2 rounded " id="hamburger" style="color:black; text-align:center; width: fit-content;" href="javascript:void(0);" onclick="myFunction();">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
     <div id="links" style="display: none; background-color:rgba(202, 209, 219, 0.5);">
         <a style="text-decoration:none;" href="/home">Kezdőlap</a>
