@@ -32,6 +32,7 @@ class Galery extends BaseController{
     public function upload()
     {
        try{
+           
             $images = $this->request->getFiles('image');
             $model=new GaleryImages();
             foreach($images['image'] as $image){
