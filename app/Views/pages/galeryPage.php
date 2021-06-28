@@ -54,6 +54,12 @@ foreach ($years as $years_item): ?>
 </div>
 </div>
 
+<?php else : ?>
+    <h5>Jelenleg nincsenek képek feltöltve, nézzen vissza később!</h5>
+
+<?php endif; ?>
+</div>
+
 <style>
 
 .container {
@@ -68,41 +74,6 @@ foreach ($years as $years_item): ?>
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   cursor: pointer;
-}
-
-.modal {
-  display: none;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: black;
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: black;
-}
-
-/* The Close Button */
-.close {
-  color: white;
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #999;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.mySlides {
-  display: none;
 }
 
 .prev,
@@ -129,12 +100,6 @@ foreach ($years as $years_item): ?>
 }
 
 </style>
-
-<?php else : ?>
-    <h5>Jelenleg nincsenek képek feltöltve, nézzen vissza később!</h5>
-
-<?php endif; ?>
-</div>
 
 <script>
 // Open the Modal

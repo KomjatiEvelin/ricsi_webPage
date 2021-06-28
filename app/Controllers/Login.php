@@ -30,7 +30,7 @@ class Login extends BaseController{
                     return redirect()->to('/home');
                 }
                 else{
-                    return redirect()->to('/login');
+                    return redirect()->to('/login')->with('msg', 'Sikertelen bejelentkezés, hibás jelszó vagy felhasználónév');
                 }
             
            
@@ -51,10 +51,10 @@ class Login extends BaseController{
         if($model->getUser(session()->get('username'))['passwd']==md5($oldPwd)){
             if($newPwd==$newPwdRepeat){
                 $model->modifyPwd(md5($newPwd),session()->get('username'));
-                return redirect()->to( base_url('/upload'))->with('msg', 'Changed succesfully');
+                return redirect()->to( base_url('/upload'))->with('msg', 'Sikeres módosítás');
             }
         }
-        else return redirect()->to( base_url('/upload'))->with('msg', 'Failed');
+        else return redirect()->to( base_url('/upload'))->with('msg', 'A módosítás nem sikerült');
             
     }
 

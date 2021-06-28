@@ -55,59 +55,7 @@
     endforeach; ?>
  </div>
 
- <style>
-
-
-/* The Modal (background) */
-.modal {
-  display: none;
-  z-index: 1;
-  padding-top: 100px;
-  width: 50%;
-  height: 50%;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Modal Content */
-.modal-content {
-  position: relative;
-  margin: auto;
-  padding: 0;
-  width: 90%;
-}
-
-/* The Close Button */
-.close {
-  color: white;
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #999;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Hide the slides by default */
-.mySlides {
-  display: none;
-}
-
-.sponsorbar{
-    display:none;
-}
-@media only screen and (max-width: 800px) {
-    .sponsorbar{
-          display:block;
-      }
-}
-
-</style>
+ 
 <script>
 // Open the Modal
 function openModalMobil(id) {

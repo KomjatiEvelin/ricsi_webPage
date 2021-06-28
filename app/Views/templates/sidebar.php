@@ -1,16 +1,5 @@
 <div class="sidebar p-0 mr-2" style="color:grey; height:100%; width:20%; overflow-y: hidden; flex:100%;">
-<script>
-function openModalID(id) {
-  let modalName="myModal"+id;
-  document.getElementById(modalName).style.display = "block";
-}
 
-// Close the Modal
-function closeModalID(id) {
-  let modalName="myModal"+id;
-  document.getElementById(modalName).style.display = "none";
-}
-</script>
 <?php 
     $db=0;
     foreach ($datas as $datas_item): 
@@ -27,7 +16,7 @@ function closeModalID(id) {
         </div>
 
         <?php if(session()->get('username')=="admin"){
-               echo '<button type="submit" class="btn btn-danger" onclick="openModalID('.$datas_item["id"].');">Szerkeszt</button>';
+               echo "<button type=\"submit\" class=\"btn btn-danger\" onclick=\"openModal('myModal'+".$datas_item["id"].");\">Szerkeszt</button>";
                 
                 echo '<form class="rounded" method="post" action="/sponsors/deleteSuper">
                        
@@ -40,7 +29,7 @@ function closeModalID(id) {
             ?>
        
         <div id="myModal<?= $datas_item['id'] ?>" class="modal">
-            <span class="close cursor" onclick="closeModalID(<?php echo $datas_item['id'] ?>)">&times;</span>
+            <span class="close cursor" onclick="closeModal('myModal'+<?php echo $datas_item['id'] ?>)">&times;</span>
             <div class="modal-content">
               <?php $key = array_search($datas_item['id'], array_column($datas, 'id')); ?>
               <h5><?php echo $datas[$key]['name'] ?> szerkesztése</h5>
@@ -66,56 +55,3 @@ function closeModalID(id) {
     endif;
     endforeach; ?>
  </div>
-
- <style>
-
-.modal {
-  display: none;
-  z-index: 1;
-  padding-top: 100px;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-
-.modal-content {
-  position: relative;
-  margin: auto;
-  padding: 5px;
-  width: 80%;
-}
-
-.close {
-  color: white;
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #999;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.card-body::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.card-body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-@media only screen and (max-width: 800px) {
-    .sidebar{
-          display:none;
-      }
-}
-
-</style>

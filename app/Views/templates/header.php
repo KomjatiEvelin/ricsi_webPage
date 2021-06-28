@@ -4,7 +4,7 @@
 <html style="height:100%; padding:0px; margin:0px;">
 
 <head>
-    <title>Test web</title> 
+    <title>Dumity Richárd</title> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -20,9 +20,9 @@
 <?php echo view('templates/navbar.php'); ?>
 <?php echo view('templates/mobileSuperSponsors'); ?>
 <?php if (session('msg')) : ?>
-     <div class="alert alert-info alert-dismissible">
+     <div class="alert alert-info alert-dismissible" id="message">
          <?= session('msg') ?>
-         <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
+         <button type="button" class="close" data-dismiss="alert" onclick="closeModal('message');"><span>×</span></button>
      </div>
  <?php endif ?>
 
@@ -31,19 +31,3 @@
     <?php echo view('templates/sidebar.php'); ?>
     <div id="maincontainer" class=" d-flex flex-row flex-wrap justify-content-center" style="flex:100%; width:80%; overflow-y:auto;">
 
-<style>
-@media only screen and (max-width: 800px) {
-        #maincontainer{
-            width:100%!important;
-        }
-    }
-
-#maincontainer::-webkit-scrollbar {
-  display: none;
-}
-
-#maincontainer {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-</style>

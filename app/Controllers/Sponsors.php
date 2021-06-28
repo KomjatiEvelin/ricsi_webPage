@@ -37,7 +37,7 @@ class Sponsors extends BaseController{
                 'level'=>$this->request->getPost('level'),
                 
             ]);
-            return redirect()->to( base_url('/upload'))->with('msg', 'Added succesfully');
+            return redirect()->to( base_url('/upload'))->with('msg', 'Sikeres hozzáadás');
         
        
     }
@@ -72,7 +72,7 @@ class Sponsors extends BaseController{
             $model->updateSuper($name,$text,$id);
         }
         
-        return redirect()->to( base_url('/upload'))->with('msg', 'Added succesfully');
+        return redirect()->to( base_url('/upload'))->with('msg', 'Sikeres hozzáadás');
     }
    
     public function deleteSuper(){

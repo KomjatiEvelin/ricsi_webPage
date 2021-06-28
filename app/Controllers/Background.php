@@ -13,7 +13,7 @@ class Background extends BaseController{
             $name="background.jpg";
             $image->move(ROOTPATH.'public/images',$name,true);
            
-            return redirect()->to( base_url('/home'))->with('msg', 'Changed succesfully');
+            return redirect()->to( base_url('/home'))->with('msg', 'Sikeres módosítás');
         
        
     }

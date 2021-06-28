@@ -27,7 +27,7 @@
         if($datas_item['level']<10): ?>
        
         <div class="rounded"  style="margin:5px; padding:2px; height:fit-content; width:25%; text-align:center;">
-        <div onclick="openModal(<?php echo $datas_item['id'] ?>);">
+        <div onclick="openModal('myModal'+<?php echo $datas_item['id'] ?>);">
             <h5 style="font-size:2.3vh;"><?= esc($datas_item['name']) ?></h5>
             <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="width:<?= $size ?>%;">
             <p style="font-size:1.6vh; overflow:hidden; word-break: break-all; height:5vh;"><?= esc($datas_item['info']) ?></p>
@@ -45,7 +45,7 @@
             
         </div>
         <div id="myModal<?= $datas_item['id'] ?>" class="modal">
-            <span class="close cursor" onclick="closeModal(<?php echo $datas_item['id'] ?>)">&times;</span>
+            <span class="close cursor" onclick="closeModal('myModal'+<?php echo $datas_item['id'] ?>)">&times;</span>
             <div class="modal-content" style="text-align:center;">
             <?php $key = array_search($datas_item['id'], array_column($datas, 'id')); ?>
             <h5><?php echo $datas[$key]['name'] ?></h5>
@@ -58,62 +58,9 @@
 
 <?php else : ?>
 
-    <h3>No Data</h3>
+    <h3>Nem találtunk adatot</h3>
 
-    <h5>Unable to find any data for you.</h5>
+    <h5>Adatbázis lekérdezési problémába ütköztünk, nézzen vissza később!</h5>
 
 <?php endif; ?>
 </div>
-
-<style>
-
-
-.modal {
-  display: none;
-  z-index: 1;
-  padding-top: 100px;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-
-.modal-content {
-  position: relative;
-  margin: auto;
-  padding: 0;
-  width: 70%;
-  background-color: rgba(255, 255, 255, 0.8);
-  overflow-y:auto;
-}
-
-.close {
-  color: white;
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #999;
-  text-decoration: none;
-  cursor: pointer;
-}
-</style>
-
-<script>
-// Open the Modal
-function openModal(id) {
-  let modalName="myModal"+id;
-  document.getElementById(modalName).style.display = "block";
-}
-
-// Close the Modal
-function closeModal(id) {
-  let modalName="myModal"+id;
-  document.getElementById(modalName).style.display = "none";
-}
-</script>
