@@ -79,7 +79,9 @@ class Sponsors extends BaseController{
                 $imgname=$image->getRandomName();
                 $image->move(ROOTPATH.'public/images',$imgname);
                 $sponsor=$model->getData($id);
-                unlink('images/'.$sponsor['img']);
+                if(isset($sponsor['img'])&&$sponsor['img']!="NULL"){
+                    unlink('images/'.$sponsor['img']);
+                }
                 $model->updateSuperWithImg($name,$imgname,$text,$id);
             }
             else

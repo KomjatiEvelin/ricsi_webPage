@@ -1,5 +1,5 @@
 <div class="content p-3 mt-2 mb-2 mr-3 rounded justify-content-center" style="min-height:90%; width:100%; color:black; background-color:rgba(255, 255, 255, 0.5);">
-<?php if (! empty($images) && is_array($images)) :
+<?php if (! empty($years) && is_array($years)) :
 foreach ($years as $years_item): ?>
     <h3 style="width:100%; text-align:center; height:fit-content; font-size:3vh;">
     <?php echo $years_item['year']; ?>
