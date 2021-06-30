@@ -30,7 +30,7 @@
         <div onclick="openModal('myModal'+<?php echo $datas_item['id'] ?>);">
             <h5><?= esc($datas_item['name']) ?></h5>
             <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="width:<?= $size ?>px;">
-            <p style="overflow:hidden; word-break: break-all; height:5vh;"><?= esc($datas_item['info']) ?></p>
+            <p style="overflow:hidden; word-break: normal; max-height:5vh;"><?= esc($datas_item['info']) ?></p>
             <p style="color:blue;">... Részletek</p></div>
             <?php if(session()->get('username')=="admin"){
                echo '<form class="rounded" method="post" action="/sponsors/delete">
@@ -42,14 +42,13 @@
                     </form>';
                 }
             ?>
-            
         </div>
         <div id="myModal<?= $datas_item['id'] ?>" class="modal">
             <span class="close cursor" onclick="closeModal('myModal'+<?php echo $datas_item['id'] ?>)">&times;</span>
             <div class="modal-content" style="text-align:center;">
             <?php $key = array_search($datas_item['id'], array_column($datas, 'id')); ?>
             <h5><?php echo $datas[$key]['name'] ?></h5>
-            <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="margin-left: auto; margin-right: auto; width:15%;">
+            <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="margin-left: auto; margin-right: auto; width:200px;">
             <p><?php echo $datas[$key]['info'] ?></p>
             </div>
         </div>
