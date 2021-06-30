@@ -1,10 +1,10 @@
 
  <div class="homecontent p-3 mt-2 mb-2 mr-3 rounded" style="min-height:90%; width:100%; color:black; background-color:rgba(202, 209, 219, 0.5);">
-     <h2 style="font-size:3.5vh;">Üdvözlöm az oldalon!</h2>
+     <h2>Üdvözlöm az oldalon!</h2>
      <br>
      <img src="<?= base_url(); ?>/images/first.jpg" alt="kep" style="padding:5px; padding-right:10px; max-width:25vw; max-height:50vh; float:left;"/>
      <br/>
-     <h6 style="font-size:2vh;">
+     <h6>
         Dumity Richárd, a Magyar Síakadémia Egyesület, illetve a Magyar Síszövetség és a Magyar Paralimpiai Bizottság hivatalos magyar klasszifikált versenyzője vagyok.
         <br/><br/>8 éve sajátítottam el a monosí és a handbike sportok alapjait, mivel kerekesszékben élek, egy 3 éves koromban bekövetkezett baleset miatt. Paraplég állapotom visszafordíthatatlan, deréktól
         lefelé, a baleset következtében lebénultam.

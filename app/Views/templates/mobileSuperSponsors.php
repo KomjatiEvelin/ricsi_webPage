@@ -7,10 +7,10 @@
     ?> 
 
     <div class="rounded" id="card<?php echo $datas_item['id'];?>" style="margin:5px; padding:3px; color:black; background-color:rgba(202, 209, 219, 0.5); width:100%; height:fit-content; overflow-y:auto; word-break: break-all;" onclick="myFunction2(<?php echo $datas_item['id']; ?>);">
-        <h5 style="text-align:center; font-size:2.2vh;"><?= esc($datas_item['name']) ?></h5>
+        <h5 style="text-align:center;"><?= esc($datas_item['name']) ?></h5>
         <div id="img<?php echo $datas_item['id'];?>" class="rounded" style="display:none; background-image:url(<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>); background-size:cover; background-repeat:no-repeat; background-position:center; width:15vw; height:15vh; float:left; margin:2px;">
         </div>
-        <p id="sponsor<?php echo $datas_item['id'];?>" style="display:none;" style="font-weight:bold; font-size:1.8vh; "><?= esc($datas_item['info']) ?></p>
+        <p id="sponsor<?php echo $datas_item['id'];?>" style="display:none;" style="font-weight:bold;"><?= esc($datas_item['info']) ?></p>
         
         <?php if(session()->get('username')=="admin"){
                echo '<button id="editBtn'.$datas_item['id'].'" type="submit" style="display:none;" class="btn btn-danger" onclick="openModalMobil('.$datas_item["id"].');" user-id="'.$datas_item["id"].'">Szerkeszt</button>';

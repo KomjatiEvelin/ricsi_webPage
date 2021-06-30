@@ -8,10 +8,10 @@
 
     <div class="card" style="margin:10px; height:45%; color:black; background-color:rgba(202, 209, 219, 0.2); ">
         <div class="card-body" style="overflow-y:auto; height:80%;">
-        <h5 style="text-align:center; font-size:2.2vh;"><?= esc($datas_item['name']) ?></h5>
+        <h5 style="text-align:center;"><?= esc($datas_item['name']) ?></h5>
         <div class="rounded" style="background-image:url(<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>); background-size:cover; background-repeat:no-repeat; background-position:center; width:6vw; height:12vh; float:left; margin:4px; margin-right:8px;">
         </div>
-        <p style="font-weight:bold; font-size:1.8vh;"><?= esc($datas_item['info']) ?></p>
+        <p style="font-weight:bold;"><?= esc($datas_item['info']) ?></p>
        
         </div>
 

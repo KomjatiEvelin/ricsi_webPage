@@ -28,10 +28,10 @@
        
         <div class="rounded"  style="margin:5px; padding:2px; height:fit-content; min-width:25%; text-align:center;">
         <div onclick="openModal('myModal'+<?php echo $datas_item['id'] ?>);">
-            <h5 style="font-size:2.3vh;"><?= esc($datas_item['name']) ?></h5>
+            <h5><?= esc($datas_item['name']) ?></h5>
             <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="width:<?= $size ?>px;">
-            <p style="font-size:1.6vh; overflow:hidden; word-break: break-all; height:5vh;"><?= esc($datas_item['info']) ?></p>
-            <p style="color:blue; font-size:1.6vh;">... Részletek</p></div>
+            <p style="overflow:hidden; word-break: break-all; height:5vh;"><?= esc($datas_item['info']) ?></p>
+            <p style="color:blue;">... Részletek</p></div>
             <?php if(session()->get('username')=="admin"){
                echo '<form class="rounded" method="post" action="/sponsors/delete">
                        
