@@ -26,7 +26,7 @@
             }
         if($datas_item['level']<10): ?>
        
-        <div class="rounded"  style="margin:5px; padding:2px; height:fit-content; min-width:25%; text-align:center;">
+        <div class="rounded"  style="margin:5px; padding:2px; height:fit-content; min-width:25%; max-width:50%; text-align:center;">
         <div onclick="openModal('myModal'+<?php echo $datas_item['id'] ?>);">
             <h5><?= esc($datas_item['name']) ?></h5>
             <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="width:<?= $size ?>px;">

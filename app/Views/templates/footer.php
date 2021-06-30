@@ -8,19 +8,20 @@
 
 <style>
   @media only screen and (max-width: 800px) {
-          #maincontainer{
-              width:100%!important;
-              margin:5px;
-          }
-      }
+      
+    #maincontainer{
+      width:100%!important;
+      margin:5px;
+    }
 
-  #maincontainer::-webkit-scrollbar {
-    display: none;
-  }
+    #maincontainer::-webkit-scrollbar {
+      display: none;
+    }
 
-  #maincontainer {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    #maincontainer {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
   }
 
   .modal {

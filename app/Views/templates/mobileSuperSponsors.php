@@ -8,7 +8,7 @@
 
     <div class="rounded" id="card<?php echo $datas_item['id'];?>" style="margin:5px; padding:3px; color:black; background-color:rgba(202, 209, 219, 0.5); width:100%; height:fit-content; overflow-y:auto; word-break: break-all;" onclick="myFunction2(<?php echo $datas_item['id']; ?>);">
         <h5 style="text-align:center;"><?= esc($datas_item['name']) ?></h5>
-        <div id="img<?php echo $datas_item['id'];?>" class="rounded" style="display:none; background-image:url(<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>); background-size:cover; background-repeat:no-repeat; background-position:center; width:15vw; height:15vh; float:left; margin:2px;">
+        <div id="img<?php echo $datas_item['id'];?>" class="rounded" style="display:none; background-image:url(<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>); background-size:cover; background-repeat:no-repeat; background-position:center; width:100px; height:120px; float:left; margin:2px;">
         </div>
         <p id="sponsor<?php echo $datas_item['id'];?>" style="display:none;" style="font-weight:bold;"><?= esc($datas_item['info']) ?></p>
         
@@ -74,15 +74,21 @@ function myFunction2(id) {
   if (x.style.display === "block") {
     x.style.display = "none";
     y.style.display = "none";
-    z.style.display = "none";
-    w.style.display = "none";
+
+    if(z!=null&&w!=null){
+      z.style.display = "none";
+      w.style.display = "none";
+    }
     document.getElementById("card1").style.height="fit-content";
     document.getElementById("card2").style.height="fit-content";
   } else {
     x.style.display = "block";
     y.style.display = "block";
-    z.style.display = "block";
-    w.style.display = "block";
+
+   if(z!=null&&w!=null){
+      z.style.display = "block";
+      w.style.display = "block";
+    }
     document.getElementById("card2").style.height="fit-content";
   }
 
