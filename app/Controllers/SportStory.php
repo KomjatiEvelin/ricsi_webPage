@@ -13,7 +13,7 @@ class SportStory extends BaseController
 
         $data=[
             'datas'=> $model->getData(),
-            'title'=>'Kapcsolat',
+            'title'=>'A sportágról',
         ];
 
         echo view('templates/header',$data);

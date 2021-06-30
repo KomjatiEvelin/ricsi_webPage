@@ -6,30 +6,30 @@
         $size;
         switch($datas_item['level']){
             case 1: 
-                $size=20;
+                $size=100;
                 break;
             case 2:
-                $size=25;
+                $size=130;
                 break;
             case 3:
-                $size=30;
+                $size=170;
                 break;
             case 4:
-                $size=35;
+                $size=210;
                 break;
             case 5:
-                $size=40;
+                $size=250;
                 break;
             default:
-                $size=20;
+                $size=100;
                 break;
             }
         if($datas_item['level']<10): ?>
        
-        <div class="rounded"  style="margin:5px; padding:2px; height:fit-content; width:25%; text-align:center;">
+        <div class="rounded"  style="margin:5px; padding:2px; height:fit-content; min-width:25%; text-align:center;">
         <div onclick="openModal('myModal'+<?php echo $datas_item['id'] ?>);">
             <h5 style="font-size:2.3vh;"><?= esc($datas_item['name']) ?></h5>
-            <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="width:<?= $size ?>%;">
+            <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="width:<?= $size ?>px;">
             <p style="font-size:1.6vh; overflow:hidden; word-break: break-all; height:5vh;"><?= esc($datas_item['info']) ?></p>
             <p style="color:blue; font-size:1.6vh;">... Részletek</p></div>
             <?php if(session()->get('username')=="admin"){

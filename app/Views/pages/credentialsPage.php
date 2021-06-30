@@ -1,6 +1,6 @@
 <div class="content d-flex flex-wrap p-3 mt-2 mb-2 mr-3 rounded justify-content-center" style="min-height:90%; width:100%; color:black; background-color:rgba(255, 255, 255, 0.5);">
     <div>
-    <img src="<?= base_url(); ?>/images/first.jpg" alt="kep" style="padding:5px; padding-right:10px; max-width:25vw; max-height:40vh; float:right;"/>
+    <img src="<?= base_url(); ?>/images/szabolaszlo.jpg" alt="kep" style="padding:5px; padding-right:10px; max-width:25vw; max-height:40vh; float:right;"/>
         <h3 style="font-size:2.5vh;">Szabó László<br/>a Magyar Paralimpiai Bizottság elnökének ajánlása:</h3>
         <p style="font-size:1.8vh;">Nem csak az a bátor, aki nagy távolságokban és tettekben gondolkodik, hanem az is, aki a legkisebb esélyt látva is belevág, hogy elérje céljait.</p>
         <p style="font-size:1.8vh;">Dumity Richárd egy tehetséges, elszánt, fiatal para alpesi sí sportoló, aki a téli parasportok számára nem kifejezetten kedvező 
@@ -12,7 +12,7 @@
         <p style="font-size:1.8vh;">Hajrá, Ricsi!</p>
     </div>
     <div>
-        <img src="<?= base_url(); ?>/images/first.jpg" alt="kep" style="padding:5px; padding-right:10px; max-width:25vw; max-height:40vh; float:right;"/>
+        <img src="<?= base_url(); ?>/images/fabianattila.jpg" alt="kep" style="padding:5px; padding-right:10px; max-width:25vw; max-height:40vh; float:right;"/>
         <h3 style="font-size:2.5vh;">Fábián Attila<br/>a Magyar Para Alpesi Sí Válogatott szövetségi kapitányának ajánlása:</h3>
         <p style="font-size:1.8vh;">Célok nélkül nincs jövő!
         Dumity Richárd személyében egy olyan fiatalembert ismertem meg,

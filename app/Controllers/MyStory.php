@@ -13,7 +13,7 @@ class MyStory extends BaseController
 
         $data=[
             'datas'=> $model->getData(),
-            'title'=>'Kapcsolat',
+            'title'=>'Történetem',
         ];
 
         echo view('templates/header',$data);
