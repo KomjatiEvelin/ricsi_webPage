@@ -1,7 +1,20 @@
 </div>
 </div>
 <div class="footer p-2 m-2 rounded bg-dark text-white flex: 0 0 20%;">
-    <p class="p-1 m-0 text-center">Dumity Richárd<br>&copy;2021</p>
+  <div class="logo-container" style="width:fit-content; margin-left:auto; margin-right:auto;" >
+  <?php if (! empty($datas) && is_array($datas)) : 
+    $db=count($datas);
+     for($i=0; $i<$db/2;$i++): 
+      if($datas[$i]['level']>=3):?>
+      <img src="<?= base_url(); ?>/images/<?= esc($datas[$i]['img'])?>" alt="szponzor logo" style="width:100px; padding:5px; margin 0px; float:left;">
+      <?php endif; endfor; ?>
+    <p class="p-1 m-0 text-center" style="float:left; margin-left: 50px!important; margin-right:50px!important;">Dumity Richárd<br>&copy;2021</p>
+    <?php 
+     for($i=$db/2; $i<$db; $i++):  
+      if($datas[$i]['level']>=3):?>
+      <img src="<?= base_url(); ?>/images/<?= esc($datas[$i]['img'])?>" alt="szponzor logo" style="width:100px; padding:5px; margin 0px;">
+      <?php endif; endfor; endif; ?>
+    </div>
 </div>
 </div>
 </body>
