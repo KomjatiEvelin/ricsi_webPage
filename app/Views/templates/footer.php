@@ -3,17 +3,24 @@
 <div class="footer p-2 m-2 rounded bg-dark text-white flex: 0 0 20%;">
   <div style="width:fit-content; margin-left:auto; margin-right:auto;" >
   <?php if (! empty($datas) && is_array($datas)) : 
-    $db=count($datas)>10?10:count($datas);
-     for($i=0; $i<$db/2;$i++): 
-      if($datas[$i]['level']>=3):?>
-      <img class="logo-footer" src="<?= base_url(); ?>/images/<?= esc($datas[$i]['img'])?>" alt="szponzor logo" style="max-width:7vw; max-height:60px; padding:0.2vw; float:left;">
-      <?php endif; endfor; ?>
+    
+    $footer=array();
+    foreach($datas as $item){
+      if($item['level']>=3&&$item['level']<10){
+       array_push($footer,$item);
+      }
+    }
+    
+    $db=count($footer)>10?10:count($footer);
+    
+     for($i=0; $i<$db/2;$i++): ?>
+      <img class="logo-footer" src="<?= base_url(); ?>/images/<?= esc($footer[$i]['img'])?>" alt="szponzor logo" style="max-width:7vw; max-height:60px; padding:0.2vw; float:left;">
+      <?php  endfor; ?>
     <p class="p-1 m-0 text-center footer-text" style="float:left; margin-left: 25px!important; margin-right:25px!important;">Dumity Richárd<br>&copy;2021</p>
     <?php 
-     for($i=$db/2; $i<$db; $i++):  
-      if($datas[$i]['level']>=3):?>
-      <img class="logo-footer" src="<?= base_url(); ?>/images/<?= esc($datas[$i]['img'])?>" alt="szponzor logo" style="max-width:7vw; max-height:60px; padding:0.2vw; float:left;">
-      <?php endif; endfor; endif; ?>
+     for($i=$db/2; $i<$db; $i++): ?>
+      <img class="logo-footer" src="<?= base_url(); ?>/images/<?= esc($footer[$i]['img'])?>" alt="szponzor logo" style="max-width:7vw; max-height:60px; padding:0.2vw; float:left;">
+      <?php endfor; endif; ?>
     </div>
 </div>
 </div>
