@@ -27,7 +27,7 @@
         </div>
         <div style="width:100%; height:fit-content;">
             <h5>Facebook</h5>
-            <a href="#"><h5>Dumity Richárd</h5><a>
+            <a href="#"><h5>Dumity Richárd</h5></a>
         </div>
     </div>
 </div>
