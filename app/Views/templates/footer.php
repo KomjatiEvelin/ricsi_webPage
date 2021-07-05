@@ -56,10 +56,6 @@
     .footer-text{
       font-size:14px;
     }
-
-    .logo-footer{
-      display:inline;
-    }
   }
 
   }
