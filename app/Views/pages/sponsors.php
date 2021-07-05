@@ -26,10 +26,10 @@
             }
         if($datas_item['level']<10): ?>
        
-        <div class="rounded"  style="margin:5px; padding:2px; height:fit-content; min-width:25%; max-width:50%; text-align:center;">
+        <div class="rounded sponsor-container"  style="margin:5px; padding:2px; height:fit-content; min-width:25%; max-width:40%; text-align:center;">
         <div onclick="openModal('myModal'+<?php echo $datas_item['id'] ?>);">
             <h5><?= esc($datas_item['name']) ?></h5>
-            <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="width:<?= $size ?>px;">
+            <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="width:<?= $size ?>px; max-width:100%;">
             <p style="overflow:hidden; word-break: normal; max-height:5vh;"><?= esc($datas_item['info']) ?></p>
             <p style="color:blue;">... Részletek</p></div>
             <?php if(session()->get('username')=="admin"){
@@ -43,12 +43,12 @@
                 }
             ?>
         </div>
-        <div id="myModal<?= $datas_item['id'] ?>" class="modal">
+        <div id="myModal<?= $datas_item['id'] ?>" class="modal" style=" overflow-y:auto;">
             <span class="close cursor" onclick="closeModal('myModal'+<?php echo $datas_item['id'] ?>)">&times;</span>
-            <div class="modal-content" style="text-align:center;">
+            <div class="modal-content" style="text-align:center; word-wrap: break-word;">
             <?php $key = array_search($datas_item['id'], array_column($datas, 'id')); ?>
             <h5><?php echo $datas[$key]['name'] ?></h5>
-            <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="margin-left: auto; margin-right: auto; width:200px;">
+            <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="margin-left: auto; margin-right: auto; width:200px; padding:5px;">
             <p><?php echo $datas[$key]['info'] ?></p>
             </div>
         </div>

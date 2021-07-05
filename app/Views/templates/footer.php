@@ -27,7 +27,7 @@
   .modal {
     display: none;
     z-index: 1;
-    padding-top: 100px;
+    padding-top: 50px;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -38,7 +38,7 @@
   .modal-content {
     position: relative;
     margin: auto;
-    padding: 5px;
+    padding: 10px;
     width: 80%;
     background-color: rgba(255,255, 255, 0.8);
   }
@@ -128,7 +128,13 @@
         .sidebar{
               display:none;
           }
+
+        .sponsor-container{
+             max-width:90%!important;
+        }
     }
+
+    
 
 </style>
 
