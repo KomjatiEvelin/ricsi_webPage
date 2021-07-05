@@ -15,6 +15,10 @@
                     <label for="fileBox" style="font-size:1.8vh;">Kép</label>
                     <input type="file" class="form-control" name="image[]" multiple="multiple" required>
                 </div>
+                <div class="form-group">
+                    <label for="infoBox" style="font-size:1.8vh;">Rövid leírás</label>
+                    <textarea class="form-control" maxlength="100" name="info" placeholder="Rövid leírás max. 100 karakter (nem kötelező)"></textarea>
+                </div>
                 <button type="submit" class="btn btn-dark" style="font-size:1.8vh;">Feltölt</button>
             </form>
         </div>

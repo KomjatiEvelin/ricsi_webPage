@@ -35,12 +35,17 @@ class Galery extends BaseController{
            
             $images = $this->request->getFiles('image');
             $model=new GaleryImages();
+            $info="kép";
+            if($this->request->getPost('info')!==null){
+                $info=$this->request->getPost('info');
+            }
             foreach($images['image'] as $image){
                 $name=$image->getRandomName();
                 $image->move(ROOTPATH.'public/galeryImages',$name);
                 $model->save([
                     'name'=>$name,
                     'year'=> $this->request->getPost('year'),
+                    'info'=> $info,
                 
                 ]);
             }
