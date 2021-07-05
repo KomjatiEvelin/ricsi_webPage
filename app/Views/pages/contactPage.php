@@ -6,7 +6,7 @@
         </div>
         <div style="width:100%; margin:10px;">
             <h5>Telefon</h5>
-            <h5>0036 30/123-4567</h5>
+            <a href="tel:003630123456"><h5>0036 30/123-4567</h5></a>
         </div>
         
     </div>
@@ -17,7 +17,7 @@
         </div>
         <div style="width:100%;">
             <h5>E-mail</h5>
-            <h5>testemail@email.hu</h5>
+            <a href="mailto:testemail@email.hu"><h5>testemail@email.hu</h5></a>
         </div>
     </div>
 
