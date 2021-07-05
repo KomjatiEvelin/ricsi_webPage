@@ -44,6 +44,20 @@
       display:none;
     }
 
+    #first-img{
+      width:150px!important;
+    }
+
+  }
+
+  @media (orientation: landscape) {
+    .sponsorbar{
+      display:none!important;
+    }
+
+    .footer-text{
+      font-size:14px;
+    }
   }
 
   .modal {
