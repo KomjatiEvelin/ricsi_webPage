@@ -25,7 +25,7 @@ foreach ($years as $years_item): ?>
           $db++;
           if($years_item['year']==$images_item['year']):?>
           
-            <img onclick="openModal('myImageModal');currentSlide(<?php echo $db ?> )" src="<?= base_url(); ?>/galeryImages/<?= esc($images_item['name'])?>" alt="<?= esc($images_item['info'])?>" style="width:10vw; height:5vw; margin:3px;">
+            <img onclick="openModal('myImageModal');currentSlide(<?php echo $db ?> )" src="<?= base_url(); ?>/galeryImages/<?= esc($images_item['name'])?>" alt="<?= esc($images_item['info'])?>" style="width:10vw; min-width:100px; height:5vw; min-height:50px; margin:3px;">
             <?php if(session()->get('username')=="admin"){
                     echo '<form method="post" action="/galery/delete">    
                             <input type="hidden" value="'.$images_item['id'].'" name="id">
