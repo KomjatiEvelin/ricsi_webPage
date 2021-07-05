@@ -7,6 +7,10 @@
 </body>
 
 <style>
+
+  html *{
+    font-family: Comic Sans MS, cursive;
+  }
   @media only screen and (max-width: 800px) {
       
     #maincontainer{

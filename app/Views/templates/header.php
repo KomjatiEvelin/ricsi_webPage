@@ -7,9 +7,12 @@
     <title>Dumity Richárd</title> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta name="description" content="Dumity Richárd személyes oldala, aki a Magyar Paralimpiai Bizottság hivatalos magyar klasszifikált versenyzője, akinek lehetősége lesz a 2026-os Paralimpián képviselni hazánkat monosí sportágban.">
+    <meta name="keywords" content="paralimpia 2026, monosí, Dumity Richárd">
+    <meta neme="robots" content="all">
     <meta name="author" content="">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- To Do -->
 </head>
 
 <body class="text-white" style="height:100%; padding:0px; margin:0px; overflow:hidden; background-image:url('<?= base_url(); ?>/images/background.jpg'); background-size:cover;" >

@@ -1,7 +1,7 @@
 <div class="content d-flex flex-wrap p-3 mt-2 mb-2 mr-3 rounded justify-content-center" style="min-height:90%; width:100%; color:black; background-color:rgba(255, 255, 255, 0.5);">
     <div style="width:100%;">
 
-    <h5>A nevem Dumity Richárd</h5> 
+    <h5 style="font-weight:bold;">A nevem Dumity Richárd</h5> 
     <p>1997-ben születtem majd 3 évre rá egy baleset következtében deréktól lefelé lebénultam,
         azóta kerekesszékben élem mindennapjaimat.</p>
         <p>A testmozgás mindig az életem szerves része
