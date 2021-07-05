@@ -12,7 +12,7 @@
     <?php 
      for($i=$db/2; $i<$db; $i++):  
       if($datas[$i]['level']>=3):?>
-      <img class="logo-footer" src="<?= base_url(); ?>/images/<?= esc($datas[$i]['img'])?>" alt="szponzor logo" style="max-width:7vw; max-height:60px; padding:0.2vw;">
+      <img class="logo-footer" src="<?= base_url(); ?>/images/<?= esc($datas[$i]['img'])?>" alt="szponzor logo" style="max-width:7vw; max-height:60px; padding:0.2vw; float:left;">
       <?php endif; endfor; endif; ?>
     </div>
 </div>
@@ -48,9 +48,7 @@
       width:150px!important;
     }
 
-  }
-
-  @media (orientation: landscape) {
+    @media (orientation: landscape) {
     .sponsorbar{
       display:none!important;
     }
@@ -58,7 +56,15 @@
     .footer-text{
       font-size:14px;
     }
+
+    .logo-footer{
+      display:inline;
+    }
   }
+
+  }
+
+  
 
   .modal {
     display: none;
