@@ -36,7 +36,7 @@ class Galery extends BaseController{
             $images = $this->request->getFiles('image');
             $model=new GaleryImages();
             $info="kép";
-            if($this->request->getPost('info')!==null){
+            if($this->request->getPost('info')!=""){
                 $info=$this->request->getPost('info');
             }
             foreach($images['image'] as $image){
