@@ -49,14 +49,14 @@
     }
 
     @media (orientation: landscape) {
-    .sponsorbar{
-      display:none!important;
-    }
+      .sponsorbar{
+        display:none!important;
+      }
 
-    .footer-text{
-      font-size:14px;
+      .footer-text{
+        font-size:14px;
+      }
     }
-  }
 
   }
 
