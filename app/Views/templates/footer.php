@@ -39,7 +39,7 @@
     position: relative;
     margin: auto;
     padding: 10px;
-    width: 80%;
+    width: 60%;
     background-color: rgba(255,255, 255, 0.8);
   }
 
@@ -131,6 +131,10 @@
 
         .sponsor-container{
              max-width:90%!important;
+        }
+
+        .modal-content {
+          width: 85%;
         }
     }
 

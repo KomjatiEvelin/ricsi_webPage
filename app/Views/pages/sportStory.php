@@ -12,8 +12,8 @@
             körülvett ülőszerkezetből, egy állítható lengéscsillapítóból, hagyományos síkötésből és
             sílécből áll.</p>
         <div style="width:fit-content; margin-left:auto; margin-right:auto;">
-            <img src="<?= base_url(); ?>/images/ulosi_kep.jpg" alt="kep" style="padding:5px; width:300px;"/>
-            <img src="<?= base_url(); ?>/images/simanko_kep.jpg" alt="kep" style="padding:5px; width:300px;"/>
+            <img src="<?= base_url(); ?>/images/ulosi_kep.jpg" alt="kep" style="padding:5px; width:300px; max-width:100%;"/>
+            <img src="<?= base_url(); ?>/images/simanko_kep.jpg" alt="kep" style="padding:5px; width:300px; max-width:100%;"/>
         </div>
 
         <p>Irányt változtatni a felsőtest elmozdításával lehet.

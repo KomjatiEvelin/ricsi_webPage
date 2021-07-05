@@ -48,7 +48,7 @@
             <div class="modal-content" style="text-align:center; word-wrap: break-word;">
             <?php $key = array_search($datas_item['id'], array_column($datas, 'id')); ?>
             <h5><?php echo $datas[$key]['name'] ?></h5>
-            <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="margin-left: auto; margin-right: auto; width:200px; padding:5px;">
+            <img src="<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>" alt="logo" style="margin-left: auto; margin-right: auto; width:300px; max-width:90%; padding:5px;">
             <p><?php echo $datas[$key]['info'] ?></p>
             </div>
         </div>
