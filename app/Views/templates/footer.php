@@ -31,7 +31,7 @@
   html *{
     font-family: Comic Sans MS, cursive;
   }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
       
     #maincontainer{
       width:100%!important;
@@ -111,7 +111,7 @@
     display:none;
   }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     .sponsorbar{
           display:block;
       }
@@ -149,7 +149,7 @@
       margin:20px;
     }
 
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 1000px) {
         #desktopnav{
             display:none;
         }
@@ -169,7 +169,7 @@
       scrollbar-width: none;  /* Firefox */
     }
 
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 1000px) {
         .sidebar{
               display:none;
           }

@@ -1,4 +1,4 @@
-<div class=" ml-2 mr-2 navbar rounded navbar-light bg-light" id="desktopnav" style="font-size:16px; font-weight:bold;">
+<div class=" ml-2 mr-2 navbar rounded navbar-light bg-light" id="desktopnav" style="font-size:18px; font-weight:bold;">
     <a style="text-decoration:none; color:black;" href="/home">Kezdőlap</a>
     <a style="text-decoration:none; color:black;" href="/mystory" target="_self">Történetem</a>
     <a style="text-decoration:none; color:black;" href="/sport" target="_self">A sportágról</a>

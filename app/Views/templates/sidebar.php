@@ -11,7 +11,7 @@
         <h5 style="text-align:center; font-weight:bold;"><?= esc($datas_item['name']) ?></h5>
         <div class="rounded" style="background-image:url(<?= base_url(); ?>/images/<?= esc($datas_item['img'])?>); background-size:cover; background-repeat:no-repeat; background-position:center; width:6vw; height:12vh; float:left; margin:4px; margin-right:8px;">
         </div>
-        <p><?= esc($datas_item['info']) ?></p>
+        <h5><?= esc($datas_item['info']) ?></h5>
        
         </div>
 
