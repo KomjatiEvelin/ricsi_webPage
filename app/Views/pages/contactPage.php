@@ -1,5 +1,8 @@
 <div class="content d-flex flex-wrap p-3 mt-2 mb-2 mr-3 rounded justify-content-center" style="min-height:90%; width:100%; color:black; background-color:rgba(255, 255, 255, 0.6); overflow:hidden;">
 
+    <div class="rounded"  style="margin:5px; padding:2px; height:fit-content; width:90%; text-align:center; background-color:rgba(255, 255, 255, 0.8);">
+        <h4 style="padding:20px;">Ha szeretne támogatni vagy kapcsolatba lépni velem, az alábbi módokon érhet el és egyeztethet velem:</h4>
+    </div>
     <div class="rounded"  style="margin:5px; padding:2px; height:200px; width:300px; text-align:center; background-color:rgba(255, 255, 255, 0.8);">
         <div style="width:100%;  height:25%; margin:10px;">
             <img src="<?= base_url(); ?>/images/phone_logo.png" alt="phone logo" style="height:100%; float:left;">
