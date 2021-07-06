@@ -1,65 +1,66 @@
-<div class="content p-3 mt-2 mb-2 mr-3 rounded justify-content-center" style="min-height:90%; width:100%; color:black; background-color:rgba(255, 255, 255, 0.5);">
-<?php if (! empty($years) && is_array($years)) :
-foreach ($years as $years_item): ?>
+<div class="content p-3 mt-4 mb-2 mr-3 rounded justify-content-center" style="min-height:90%; width:95%; color:black; background-color:rgba(255, 255, 255, 0.5);">
+  <?php if (! empty($years) && is_array($years)) :
+  foreach ($years as $years_item): ?>
     <h3 style="width:100%; text-align:center; height:fit-content; padding-top:30px;">
-    <?php echo $years_item['year']; ?>
-    <?php if(session()->get('username')=="admin"){
-            echo '<form class="rounded" method="post" action="/galery/deleteYear">    
-                    <input type="hidden" value="'.$years_item['year'].'" name="year">
-                    <button type="submit" class="btn btn-danger">Évszám törlése</button>
-                  </form>';
-                }
-            ?>
+      <?php echo $years_item['year']; ?>
+      <?php if(session()->get('username')=="admin"){
+              echo '<form class="rounded" method="post" action="/galery/deleteYear">    
+                      <input type="hidden" value="'.$years_item['year'].'" name="year">
+                      <button type="submit" class="btn btn-danger">Évszám törlése</button>
+                    </form>';
+                  }
+              ?>
     </h3>
     
     
     <h6 style="width:100%; text-align:center; height:fit-content;">
-    <?php if($years_item['text']!=null) echo $years_item['text'];?></h6>
-    <hr style="border-top:1px solid black; width:70%;">
+      <?php if($years_item['text']!=null) echo $years_item['text'];?></h6>
+        <hr style="border-top:1px solid black; width:70%;">
    
-    <div style="height:fit-content; width: 100%; vertical-align:middle; text-align:center">
-      <?php
-        $db=0;
-  
-        foreach ($images as $images_item): 
-          $db++;
-          if($years_item['year']==$images_item['year']):?>
-          
-            <img onclick="openModal('myImageModal');currentSlide(<?php echo $db ?> )" src="<?= base_url(); ?>/galeryImages/<?= esc($images_item['name'])?>" alt="<?= esc($images_item['info'])?>" style="width:10vw; min-width:100px; height:5vw; min-height:50px; margin:3px;">
-            <?php if(session()->get('username')=="admin"){
-                    echo '<form method="post" action="/galery/delete">    
-                            <input type="hidden" value="'.$images_item['id'].'" name="id">
-                            <input type="hidden" value="'.$images_item['name'].'" name="name">
-                            <button type="submit" class="btn btn-danger">Töröl</button>
-                          </form>';
-                  }
-          endif; 
-        endforeach; 
-      endforeach; ?>
-    </div>
-</div>
-
-<div id="myImageModal" class="modal">
-  <span class="close cursor" onclick="closeModal('myImageModal')">&times;</span>
-  <div class="modal-content" style=" height:90%; width:90%; overflow-y:auto;">
-  <?php foreach ($images as $images_item): ?>
-    <div class="mySlides" style=" max-height:90%; max-width:90%; margin-left:auto; margin-right:auto; margin-top:auto; margin-bottom:auto;">
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <img src="<?= base_url();?>/galeryImages/<?= esc($images_item['name'])?>" alt="<?= esc($images_item['info'])?>" style="max-width:100%; max-height:100%;">
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      <h5 style="padding:5px;  word-wrap: break-word;"><?= esc($images_item['info'])?></h4>
-    </div>
+        <div style="height:fit-content; width: 100%; vertical-align:middle; text-align:center">
+          <?php
+            $db=0;
+      
+            foreach ($images as $images_item): 
+              $db++;
+              if($years_item['year']==$images_item['year']):?>
+              
+                <img onclick="openModal('myImageModal');currentSlide(<?php echo $db ?> )" src="<?= base_url(); ?>/galeryImages/<?= esc($images_item['name'])?>" alt="<?= esc($images_item['info'])?>" style="width:10vw; min-width:100px; height:5vw; min-height:50px; margin:3px;">
+                <?php if(session()->get('username')=="admin"){
+                        echo '<form method="post" action="/galery/delete">    
+                                <input type="hidden" value="'.$images_item['id'].'" name="id">
+                                <input type="hidden" value="'.$images_item['name'].'" name="name">
+                                <button type="submit" class="btn btn-danger">Töröl</button>
+                              </form>';
+                      }
+              endif; 
+            endforeach; ?>
     
-  <?php endforeach; ?>
-   
-  
-</div>
-</div>
+        </div>
+      <?php endforeach; ?>
 
-<?php else : ?>
-    <h5>Jelenleg nincsenek képek feltöltve, nézzen vissza később!</h5>
 
-<?php endif; ?>
+  <div id="myImageModal" class="modal">
+    <span class="close cursor" onclick="closeModal('myImageModal')">&times;</span>
+    <div class="modal-content" style=" height:90%; width:90%; overflow-y:auto;">
+    <?php foreach ($images as $images_item): ?>
+      <div class="mySlides" style=" max-height:90%; max-width:90%; margin-left:auto; margin-right:auto; margin-top:auto; margin-bottom:auto;">
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <img src="<?= base_url();?>/galeryImages/<?= esc($images_item['name'])?>" alt="<?= esc($images_item['info'])?>" style="max-width:100%; max-height:100%;">
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <h5 style="padding:5px;  word-wrap: break-word;"><?= esc($images_item['info'])?></h5>
+      </div>
+      
+        <?php endforeach; ?>
+    
+    
+    </div>
+  </div>
+
+  <?php else : ?>
+      <h5>Jelenleg nincsenek képek feltöltve, nézzen vissza később!</h5>
+
+  <?php endif; ?>
 </div>
 
 <style>

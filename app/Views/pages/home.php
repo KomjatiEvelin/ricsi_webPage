@@ -1,5 +1,5 @@
 
- <div class="homecontent p-3 mt-2 mb-2 mr-3 rounded" style="min-height:90%; width:100%; color:black; background-color:rgba(255, 255, 255, 0.5);">
+ <div class="homecontent p-3 mt-4 mb-2 mr-3 rounded" style="min-height:90%; width:95%; color:black; background-color:rgba(255, 255, 255, 0.5);">
      <h2>Üdvözlöm az oldalon!</h2>
      <img id="first-img" src="<?= base_url(); ?>/images/first.jpg" alt="kezdőkép Dumity Richárd" style="padding:5px; padding-right:10px; width:350px; float:left;"/>
     
