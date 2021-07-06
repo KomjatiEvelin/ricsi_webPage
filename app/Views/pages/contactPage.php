@@ -4,7 +4,7 @@
         <h4 style="padding:20px;">Ha szeretne támogatni vagy kapcsolatba lépni velem, az alábbi módokon érhet el és egyeztethet velem:</h4>
     </div>
     <div style="width:fit-content; height:fit-content; margin-left:auto; margin-right:auto;">
-        <div class="rounded"  style="margin:5px; padding:2px; height:200px; width:300px; text-align:center; background-color:rgba(255, 255, 255, 0.8); float:left;">
+        <div class="rounded contact-card"  style="margin:5px; padding:2px; height:200px; width:300px; text-align:center; background-color:rgba(255, 255, 255, 0.8); float:left;">
             <div style="width:100%;  height:25%; margin:10px;">
                 <img src="<?= base_url(); ?>/images/phone_logo.png" alt="phone logo" style="height:100%; float:left;">
             </div>
@@ -15,7 +15,7 @@
             
         </div>
 
-        <div class="rounded"  style="margin:5px; padding:2px; height:200px; width:300px; text-align:center; background-color:rgba(255, 255, 255, 0.8); float:left;">
+        <div class="rounded contact-card"  style="margin:5px; padding:2px; height:200px; width:300px; text-align:center; background-color:rgba(255, 255, 255, 0.8); float:left;">
             <div style="width:100%;  height:25%; margin:10px;">
                 <img src="<?= base_url(); ?>/images/email_logo.png" alt="email logo" style="height:100%; float:left;">
             </div>
@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <div class="rounded"  style="margin:5px; padding:2px; height:200px; width:300px; text-align:center; background-color:rgba(255, 255, 255, 0.8); float:left;">
+        <div class="rounded contact-card"  style="margin:5px; padding:2px; height:200px; width:300px; text-align:center; background-color:rgba(255, 255, 255, 0.8); float:left;">
             <div style="width:100%;  height:25%; margin:10px;">
                 <img src="<?= base_url(); ?>/images/facebook_logo.png" alt="email logo" style="height:100%; float:left;">
             </div>

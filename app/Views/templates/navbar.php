@@ -14,7 +14,7 @@
     ?>
 </div>
 
-<div id="mobilenav" >
+<div id="mobilenav">
     <div class="p-1 ml-2 mr-2 rounded " id="hamburger" style="color:black; text-align:center; width: fit-content;" href="javascript:void(0);" onclick="myFunction();">
       <span></span>
       <span></span>

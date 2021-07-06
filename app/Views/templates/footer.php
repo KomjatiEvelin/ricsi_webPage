@@ -55,13 +55,25 @@
       width:150px!important;
     }
 
+    .contact-card{
+      clear:both;
+    }
+
     @media (orientation: landscape) {
       .sponsorbar{
         display:none!important;
       }
 
-      .footer-text{
-        font-size:14px;
+      .footer{
+        font-size:10px;
+      }
+
+      #mobilenav{
+        overflow-y:auto!important;
+      }
+
+      .header-text{
+        font-size:20px!important;
       }
     }
 
