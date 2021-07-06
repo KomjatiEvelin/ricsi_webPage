@@ -14,12 +14,12 @@
     $db=count($footer)>10?10:count($footer);
     
      for($i=0; $i<$db/2;$i++): ?>
-      <img class="logo-footer" src="<?= base_url(); ?>/images/<?= esc($footer[$i]['img'])?>" alt="szponzor logo" style="max-width:7vw; max-height:60px; padding:0.2vw; float:left;">
+      <img class="logo-footer" src="<?= base_url(); ?>/images/sponsor_logos/<?= esc($footer[$i]['img'])?>" alt="szponzor logo" style="max-width:7vw; max-height:60px; padding:0.2vw; float:left;">
       <?php  endfor; ?>
     <p class="p-1 m-0 text-center footer-text" style="float:left; margin-left: 25px!important; margin-right:25px!important;">Dumity Richárd<br>&copy;2021</p>
     <?php 
      for($i=$db/2; $i<$db; $i++): ?>
-      <img class="logo-footer" src="<?= base_url(); ?>/images/<?= esc($footer[$i]['img'])?>" alt="szponzor logo" style="max-width:7vw; max-height:60px; padding:0.2vw; float:left;">
+      <img class="logo-footer" src="<?= base_url(); ?>/images/sponsor_logos/<?= esc($footer[$i]['img'])?>" alt="szponzor logo" style="max-width:7vw; max-height:60px; padding:0.2vw; float:left;">
       <?php endfor; endif; ?>
     </div>
 </div>
@@ -29,7 +29,7 @@
 <style>
 
   html *{
-    font-family: Comic Sans MS, cursive;
+    font-family: Georgia, serif;
   }
   @media only screen and (max-width: 1000px) {
       

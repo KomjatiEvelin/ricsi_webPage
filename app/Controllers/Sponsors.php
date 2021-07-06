@@ -31,7 +31,7 @@ class Sponsors extends BaseController{
           
             $logo = $this->request->getFile('logo');
             $name=$logo->getRandomName();
-            $logo->move(ROOTPATH.'public/images',$name);
+            $logo->move(ROOTPATH.'public/images/sponsor_logos/',$name);
             $model=new Sponsor();
             $model->save([
                 'name' => $this->request->getPost('name'),
@@ -56,7 +56,7 @@ class Sponsors extends BaseController{
             if($this->request->getMethod()==='post'){
                 $id=$this->request->getPost('id');
                 $sponsor=$model->getData($id);
-                unlink('images/'.$sponsor['img']);
+                unlink('images/sponsor_logos/'.$sponsor['img']);
                 $model->deleteData($id);
             }
             return redirect()->to( base_url('/sponsors'))->with('msg', 'Sikeres törlés');
@@ -77,10 +77,10 @@ class Sponsors extends BaseController{
             $image = $this->request->getFile('image');
             if(is_file($image)){
                 $imgname=$image->getRandomName();
-                $image->move(ROOTPATH.'public/images',$imgname);
+                $image->move(ROOTPATH.'public/images/sponsor_logos/',$imgname);
                 $sponsor=$model->getData($id);
                 if(isset($sponsor['img'])&&$sponsor['img']!="NULL"){
-                    unlink('images/'.$sponsor['img']);
+                    unlink('images/sponsor_logos/'.$sponsor['img']);
                 }
                 $model->updateSuperWithImg($name,$imgname,$text,$id);
             }
@@ -102,7 +102,7 @@ class Sponsors extends BaseController{
             $model=new Sponsor();
             $id=$this->request->getPost('id');
             $sponsor=$model->getData($id);
-            unlink('images/'.$sponsor['img']);
+            unlink('images/sponsor_logos/'.$sponsor['img']);
             if($this->request->getMethod()==='post'){
                 $model->updateSuperWithImg("","NULL","",$id);
             }
