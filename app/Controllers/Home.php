@@ -11,11 +11,10 @@ class Home extends BaseController
         }
 
         $model=new Sponsor();
-
         $data=[
             'datas'=> $model->getData(),
             'title'=>'Főoldal',
-        ];
+            ];
 
         echo view('templates/header',$data);
         echo view('pages/home',$data);

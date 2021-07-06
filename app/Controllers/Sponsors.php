@@ -10,6 +10,7 @@ class Sponsors extends BaseController{
         if(!is_file(APPPATH.'/Views/pages/sponsors.php')){
             throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
         }
+
         $model=new Sponsor();
 
         $data=[
