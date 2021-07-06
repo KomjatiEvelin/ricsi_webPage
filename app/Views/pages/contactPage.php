@@ -1,4 +1,4 @@
-<div class="content p-3 mt-2 mb-2 mr-3 rounded" style="min-height:90%; width:100%; color:black; background-color:rgba(255, 255, 255, 0.6); overflow:hidden;">
+<div class="content p-3 mt-2 mb-2 mr-3 rounded" style="min-height:90%; width:100%; color:black; overflow:hidden;">
 
     <div class="rounded"  style="margin:5px; margin-left:auto; margin-right:auto; padding:2px; height:fit-content; width:90%; text-align:center; background-color:rgba(255, 255, 255, 0.8);">
         <h4 style="padding:20px;">Ha szeretne támogatni vagy kapcsolatba lépni velem, az alábbi módokon érhet el és egyeztethet velem:</h4>

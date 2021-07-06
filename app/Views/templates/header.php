@@ -17,7 +17,7 @@
 
 <body class="text-white" style="height:100%; padding:0px; margin:0px; overflow:hidden; background-image:url('<?= base_url(); ?>/images/background.jpg'); background-size:cover;" >
 <div class="page" style="height:100%; padding:0px; margin:0px; display:flex; flex-flow:column nowrap;">
-<div class="header p-3 m-2 rounded bg-dark text-white" style="flex: 0 0 auto;">
+<div class="header p-3 m-2 rounded text-white" style="flex: 0 0 auto; background-color:rgba(33, 37, 41,0.6);">
     <h1 class="text-center" style="font-size:4vh;"><?= esc($title) ?></h1>
 </div>
 <?php echo view('templates/navbar.php'); ?>
