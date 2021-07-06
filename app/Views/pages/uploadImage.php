@@ -13,7 +13,7 @@
                 </div>
                 <div class="form-group">
                     <label for="fileBox" style="font-size:1.8vh;">Kép</label>
-                    <input type="file" class="form-control" name="image[]" multiple="multiple" required>
+                    <input type="file" accept=",jpg,.jpeg,.png" class="form-control" name="image[]" multiple="multiple" required>
                 </div>
                 <div class="form-group">
                     <label for="infoBox" style="font-size:1.8vh;">Rövid leírás</label>
