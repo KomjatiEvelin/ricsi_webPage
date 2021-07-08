@@ -6,7 +6,7 @@
     if($datas_item['level']>5&&$db<2):
     ?> 
 
-    <div class="rounded" id="card<?php echo $datas_item['id'];?>" style="margin:5px; padding:3px; color:black; background-color:rgba(202, 209, 219, 0.5); width:100%; height:fit-content; overflow-y:auto; word-break:normal;" onclick="myFunction2(<?php echo $datas_item['id']; ?>);">
+    <div class="rounded" id="card<?php echo $datas_item['id'];?>" style="margin:5px; padding:3px; color:white; background-color:rgba(0, 0, 0, 0.5); width:100%; height:fit-content; overflow-y:auto; word-break:normal;" onclick="myFunction2(<?php echo $datas_item['id']; ?>);">
         <h6 style="text-align:center; padding-top:5px; font-weight:bold;"><?= esc($datas_item['name']) ?></h6>
         <div id="img<?php echo $datas_item['id'];?>" class="rounded" style="display:none; background-image:url(<?= base_url(); ?>/images/sponsor_logos/<?= esc($datas_item['img'])?>); background-size:cover; background-repeat:no-repeat; background-position:center; width:100px; height:120px; float:left; margin-left:10px; margin-right:10px;">
         </div>

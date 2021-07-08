@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Sponsor;
 use App\Models\GaleryImages;
+use App\Models\GaleryVideos;
 use App\Models\yearInfo;
 
 class Galery extends BaseController{
@@ -72,7 +73,7 @@ class Galery extends BaseController{
             }
            
             $name=$video->getRandomName();
-            $image->move(ROOTPATH.'public/video',$name);
+            $video->move(ROOTPATH.'public/video',$name);
             $model->save([
                 'name'=>$name,
                 'info'=> $info,

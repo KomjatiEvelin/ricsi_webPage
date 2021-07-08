@@ -1,4 +1,4 @@
-<div class="content d-flex flex-wrap p-3 mt-4 mb-2 mr-3 rounded justify-content-center" style="min-height:90%; width:95%; color:black; background-color:rgba(255, 255, 255, 0.6);">
+<div class="content d-flex flex-wrap p-3 mt-4 mb-2 mr-3 rounded justify-content-center" style="min-height:90%; width:95%; color:white; background-color:rgba(0, 0, 0, 0.5);">
 <?php if (! empty($datas) && is_array($datas)) : ?>
 
 
