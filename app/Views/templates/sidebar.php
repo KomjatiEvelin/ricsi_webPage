@@ -1,4 +1,4 @@
-<div class="sidebar p-0 mr-2" style="color:grey; height:100%; width:20%; overflow-y: hidden; flex:100%;">
+<div class="sidebar p-0 mr-2" style="color:grey; height:100%; width:15%; overflow: hidden; flex:100%;">
 
 <?php 
     $db=0;
@@ -6,12 +6,17 @@
     if($datas_item['level']>5&&$db<2):
     ?> 
 
-    <div class="card" style="margin:5px; margin-top:25px; height:45%; color:white; background-color:rgba(0, 0, 0, 0.5); ">
-        <div class="card-body" style="overflow-y:auto; height:80%;">
-        <h5 style="text-align:center; font-weight:bold;"><?= esc($datas_item['name']) ?></h5>
-        <div class="rounded" style="background-image:url(<?= base_url(); ?>/images/sponsor_logos/<?= esc($datas_item['img'])?>); background-size:cover; background-repeat:no-repeat; background-position:center; width:6vw; height:12vh; float:left; margin:4px; margin-right:8px;">
-        </div>
-        <h5><?= esc($datas_item['info']) ?></h5>
+    <div class="card flip-box" style="margin-top:25px; height:45%; color:white; background-color:rgba(0, 0, 0, 0); border:0pt;">
+        <div class="card-body flip-box-inner" style="height:100%; width:100%; background-color:rgba(0, 0, 0, 0.5);">
+            <div class="flip-box-front" style="text-align:center; height:90%; width:90%; display: flex; flex-direction: column; justify-content: center; padding:5px;">
+                <h5 style="padding:3px;">Kiemelt támogatónk</h5>
+                <h5 style="font-weight:bold;"><?= esc($datas_item['name']) ?></h5>
+                <div class="rounded-pill" style="background-image:url(<?= base_url(); ?>/images/sponsor_logos/<?= esc($datas_item['img'])?>); background-size:contain; background-repeat:no-repeat; background-position:center; height:75%; width:90%; ">
+                </div>
+            </div>
+            <div class="flip-box-back" style="overflow-y:auto;">
+                <h5 style="color:white; padding:5px;"><?= esc($datas_item['info']) ?></h5>
+            </div>
        
         </div>
 

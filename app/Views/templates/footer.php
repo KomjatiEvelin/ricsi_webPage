@@ -60,9 +60,6 @@
     }
 
     @media (orientation: landscape) {
-      .sponsorbar{
-        display:none!important;
-      }
 
       .footer{
         font-size:10px;
@@ -195,7 +192,29 @@
         }
     }
 
-    
+.flip-box-inner {
+  position: relative;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-box-back {
+  color: white;
+  transform: rotateY(180deg);
+}
 
 </style>
 

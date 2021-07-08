@@ -32,5 +32,5 @@
 
 <div class="mr-2 ml-2 d-flex flex-column flex-wrap" style="flex:100%; overflow:hidden; align-content: flex-start;">
     <?php echo view('templates/sidebar.php'); ?>
-    <div id="maincontainer" class=" d-flex flex-row flex-wrap justify-content-center" style="flex:100%; width:80%; overflow-y:auto;">
+    <div id="maincontainer" class=" d-flex flex-row flex-wrap justify-content-center" style="flex:100%; width:85%; overflow-y:auto;">
 
