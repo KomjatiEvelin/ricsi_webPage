@@ -1,5 +1,5 @@
 <div class="content d-flex flex-wrap p-3 mt-2 mb-2 mr-3 rounded justify-content-center" style="min-height:90%; width:100%; color:black;">
-    <div class="rounded p-3" style="margin:10px;  color:white; background-color:rgba(0, 0, 0, 0.5);">
+    <div class="rounded p-3 credential" style="margin:10px;  color:white; background-color:rgba(0, 0, 0, 0.5);">
     <img src="<?= base_url(); ?>/images/szabolaszlo.jpg" alt="Szabó László arcképe" style="padding:5px; padding-right:10px; max-width:30vw; max-height:40vh; float:right;"/>
         <h3>Szabó László<br/>a Magyar Paralimpiai Bizottság elnökének ajánlása:</h3>
         <p>Nem csak az a bátor, aki nagy távolságokban és tettekben gondolkodik, hanem az is, aki a legkisebb esélyt látva is belevág, hogy elérje céljait.</p>
@@ -12,7 +12,7 @@
         <p style="font-weight:bold;">Hajrá, Ricsi!</p>
     </div>
     <hr style="border-top:1px solid black; width:70%;">
-    <div class="rounded p-3" style="margin:10px; color:white; background-color:rgba(0, 0, 0, 0.5);">
+    <div class="rounded p-3 credential" style="margin:10px; color:white; background-color:rgba(0, 0, 0, 0.5);">
         <img src="<?= base_url(); ?>/images/fabianattila.jpg" alt="Fábián Attila arcképe" style="padding:5px; padding-right:10px; max-width:30vw; max-height:40vh; float:right;"/>
         <h3>Fábián Attila<br/>a Magyar Para Alpesi Sí Válogatott szövetségi kapitányának ajánlása:</h3>
         <p">Célok nélkül nincs jövő!
