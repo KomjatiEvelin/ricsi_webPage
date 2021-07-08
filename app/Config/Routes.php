@@ -38,6 +38,7 @@ $routes->match(['get', 'post'], '/sponsors/deleteSuper', 'Sponsors::deleteSuper'
 $routes->match(['get', 'post'], 'sponsors/create', 'Sponsors::create');
 $routes->match(['get', 'post'], '/sponsors/update', 'Sponsors::updateSuper');
 $routes->match(['get', 'post'], 'galery/upload', 'Galery::upload');
+$routes->match(['get', 'post'], 'galery/uploadVideo', 'Galery::uploadVideo');
 $routes->match(['get', 'post'], 'galery/addyear', 'Galery::addyear');
 $routes->get('sponsors/(:segment)', 'Sponsors::index');
 $routes->get('sponsors', 'Sponsors::index');

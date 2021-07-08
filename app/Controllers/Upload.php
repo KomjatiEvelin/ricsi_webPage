@@ -22,6 +22,7 @@ class Upload extends BaseController{
         echo view('pages/addSponsor',$data);
         echo view('pages/addNewYear',$data);
         echo view('pages/uploadImage',$data);
+        echo view('pages/uploadVideo',$data);
         echo view('pages/modifyPasswd',$data);
         echo view('pages/setBackground',$data);
         echo view('templates/footer',$data);

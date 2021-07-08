@@ -25,7 +25,7 @@
               $db++;
               if($years_item['year']==$images_item['year']):?>
               
-                <img onclick="openModal('myImageModal');currentSlide(<?php echo $db ?> )" src="<?= base_url(); ?>/galeryImages/<?= esc($images_item['name'])?>" alt="<?= esc($images_item['info'])?>" style="width:10vw; min-width:100px; height:5vw; min-height:50px; margin:3px;">
+                <div onclick="openModal('myImageModal');currentSlide(<?php echo $db ?> )" style="width:10vw; min-width:100px; height:5vw; min-height:50px; margin:3px; background-image:url(<?= base_url(); ?>/galeryImages/<?= esc($images_item['name'])?>); background-size:cover;  background-repeat: no-repeat; display:inline-block;"></div>
                 <?php if(session()->get('username')=="admin"){
                         echo '<form method="post" action="/galery/delete">    
                                 <input type="hidden" value="'.$images_item['id'].'" name="id">
@@ -38,6 +38,14 @@
     
         </div>
       <?php endforeach; ?>
+
+      <h3 style="width:100%; text-align:center; height:fit-content; padding-top:30px;">Videók</h3>
+      <hr style="border-top:1px solid black; width:70%;">
+      <div style="height:fit-content; width: 100%; vertical-align:middle; text-align:center">
+        <video style="width:10vw; min-width:150px; height:8vw; min-height:100px; margin:3px;" controls>
+            <source src="<?= base_url(); ?>/video/IMG_3837.MOV" type="video/mp4">
+        </video>
+      </div>
 
 
   <div id="myImageModal" class="modal">

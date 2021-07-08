@@ -14,10 +14,12 @@ class Galery extends BaseController{
         }
         $model=new Sponsor();
         $model1=new GaleryImages();
+        $model3=new GaleryVideos();
         $model2= new yearInfo();
         $data=[
             'datas'=> $model->getData(),
             'images'=>$model1->getData(),
+            'videos'=>$model3->getData(),
             'years'=>$model2->getData(),
             'title'=>'Galéria',
         ];
@@ -56,9 +58,36 @@ class Galery extends BaseController{
             return redirect()->to( base_url('/upload'))->with('msg', 'Sikertelen feltöltés '.$e->getMessage());
     
         }
-        
-       
     }
+
+    public function uploadVideo()
+    {
+       try{
+           
+            $video = $this->request->getFile('video');
+            $model=new GaleryVideos();
+            $info="videó";
+            if($this->request->getPost('info')!=""){
+                $info=$this->request->getPost('info');
+            }
+           
+            $name=$video->getRandomName();
+            $image->move(ROOTPATH.'public/video',$name);
+            $model->save([
+                'name'=>$name,
+                'info'=> $info,
+                
+            ]);
+            
+            return redirect()->to( base_url('/upload'))->with('msg', 'Sikeres feltöltés');
+        }
+        catch(\Exception $e){
+            
+            return redirect()->to( base_url('/upload'))->with('msg', 'Sikertelen feltöltés '.$e->getMessage());
+    
+        }
+    }
+
 
     public function addyear(){
         try{
