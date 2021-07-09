@@ -56,7 +56,7 @@
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <img src="<?= base_url();?>/galeryImages/<?= esc($images_item['name'])?>" alt="<?= esc($images_item['info'])?>" style="max-width:100%; max-height:100%;">
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        <h5 style="padding:5px;  word-wrap: break-word;"><?= esc($images_item['info'])?></h5>
+        <h5 style="padding:5px; color:black; word-wrap: break-word;"><?= esc($images_item['info'])?></h5>
       </div>
       
         <?php endforeach; ?>

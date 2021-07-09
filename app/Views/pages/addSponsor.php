@@ -13,7 +13,7 @@
                 </div>
                 <div class="form-group">
                     <label for="fileBox" style="font-size:1.8vh;">Logo</label>
-                    <input type="file" accept=",jpg,.jpeg,.png" class="form-control" name="logo" required>
+                    <input type="file" class="form-control" name="logo" required>
                 </div>
                 <div class="form-group">
                     <label for="infoBox" style="font-size:1.8vh;">Rövid leírás</label>

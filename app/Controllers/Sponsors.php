@@ -24,19 +24,35 @@ class Sponsors extends BaseController{
 
     }
 
+    function getExtension($str) {
+        $i = strrpos($str, ".");
+        if (!$i) { return ""; }
+        $l = strlen($str) - $i;
+        $ext = substr($str,$i+1,$l);
+        return $ext;
+    }
+
 
     public function create()
     {
        try{
-        $name="";
-          
             $logo = $this->request->getFile('logo');
             $name=$logo->getRandomName();
-            $logo->move(ROOTPATH.'public/images/sponsor_logos/',$name);
+                $extension = strtolower($this->getExtension($name));
+                if (($extension != "jpg") && ($extension != "jpeg") && ($extension != "png")){
+                    return redirect()->to( base_url('/upload'))
+                                     ->with('msg', 'Sikertelen feltöltés, nem megfelelő fájltípus (elfogadott: jpg, jpeg, png)');
+                }
+
+            $logo->move(ROOTPATH.'public/images/sponsor_logos/',strtolower($name));
+            $logo1 = \Config\Services::image()
+                ->withFile(ROOTPATH.'public/images/sponsor_logos/'.strtolower($name))
+                ->resize(300, 300, true, 'width')
+                ->save(ROOTPATH.'public/images/sponsor_logos/'.strtolower($name));
             $model=new Sponsor();
             $model->save([
                 'name' => $this->request->getPost('name'),
-                'img'=>$name,
+                'img'=>strtolower($name),
                 'info'  => $this->request->getPost('info'),
                 'level'=>$this->request->getPost('level'),
                 
@@ -78,12 +94,21 @@ class Sponsors extends BaseController{
             $image = $this->request->getFile('image');
             if(is_file($image)){
                 $imgname=$image->getRandomName();
-                $image->move(ROOTPATH.'public/images/sponsor_logos/',$imgname);
+                $extension = strtolower($this->getExtension($imgname));
+                if (($extension != "jpg") && ($extension != "jpeg") && ($extension != "png")){
+                    return redirect()->to( base_url('/upload'))
+                                     ->with('msg', 'Sikertelen feltöltés, nem megfelelő fájltípus (elfogadott: jpg, jpeg, png)');
+                }
+                $image->move(ROOTPATH.'public/images/sponsor_logos/',strtolower($imgname));
+                $logo1 = \Config\Services::image()
+                    ->withFile(ROOTPATH.'public/images/sponsor_logos/'.strtolower($name))
+                    ->resize(500, 500, true, 'width')
+                    ->save(ROOTPATH.'public/images/sponsor_logos/'.strtolower($name));
                 $sponsor=$model->getData($id);
                 if(isset($sponsor['img'])&&$sponsor['img']!="NULL"){
                     unlink('images/sponsor_logos/'.$sponsor['img']);
                 }
-                $model->updateSuperWithImg($name,$imgname,$text,$id);
+                $model->updateSuperWithImg($name,strtolower($imgname),$text,$id);
             }
             else
             {

@@ -45,7 +45,7 @@
         </div>
         <div id="myModal<?= $datas_item['id'] ?>" class="modal" style=" overflow-y:auto;">
             <span class="close cursor" onclick="closeModal('myModal'+<?php echo $datas_item['id'] ?>)">&times;</span>
-            <div class="modal-content" style="text-align:center; word-wrap: break-word;">
+            <div class="modal-content" style="text-align:center; word-wrap: color:black; break-word;">
             <?php $key = array_search($datas_item['id'], array_column($datas, 'id')); ?>
             <h5 style="font-weight:bold;"><?php echo $datas[$key]['name'] ?></h5>
             <img src="<?= base_url(); ?>/images/sponsor_logos/<?= esc($datas_item['img'])?>" alt="szponzor logo" style="margin-left: auto; margin-right: auto; width:300px; max-width:90%; padding:5px;">

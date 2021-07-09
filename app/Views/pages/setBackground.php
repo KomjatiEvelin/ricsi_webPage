@@ -4,7 +4,7 @@
             <form class="card p-2 m-3 rounded" method="post" enctype="multipart/form-data" action="/background/change">
                
                     <label for="fileBox" style="font-size:1.8vh;">Új kép</label>
-                    <input type="file" accept=",jpg,.jpeg,.png" class="form-control" name="backgrnd" required>
+                    <input type="file" class="form-control" name="backgrnd" required>
                 </div>
                
                 <button type="submit" class="btn btn-dark" style="font-size:1.8vh;">Feltölt</button>

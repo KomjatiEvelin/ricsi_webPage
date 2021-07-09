@@ -31,6 +31,7 @@
   html *{
     font-family: Georgia, serif;
   }
+
   @media only screen and (max-width: 1000px) {
       
     #maincontainer{
@@ -258,12 +259,14 @@
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-
+  -ms-overflow-style: none; 
+  scrollbar-width: thin;
 }
 
 .flip-box:hover .flip-box-inner {
   transform: rotateY(180deg);
   background-color: rgba(0, 0, 0, 0.5);
+
 }
 
 .flip-box-front, .flip-box-back {
@@ -275,6 +278,7 @@
 .flip-box-back {
   color: white;
   transform: rotateY(180deg);
+  
 }
 
 #hometitle,
