@@ -63,6 +63,12 @@ class Galery extends BaseController{
                         ->withFile(ROOTPATH.'public/galeryImages/'.strtolower($name))
                         ->resize(1280, 720, true, 'height')
                         ->save(ROOTPATH.'public/galeryImages/'.strtolower($name));
+                
+                $thumbnail = \Config\Services::image()
+                    ->withFile(ROOTPATH.'public/galeryImages/'.strtolower($name))
+                    ->resize(200, 100, false, 'height')
+                    ->save(ROOTPATH.'public/galeryImages/thumb_'.strtolower($name));
+
                 $model->save([
                     'name'=>strtolower($name),
                     'year'=> $this->request->getPost('year'),
@@ -137,6 +143,7 @@ class Galery extends BaseController{
                 $model->deleteData($this->request->getPost('id'));
             }
             unlink(ROOTPATH.'public/galeryImages/'.$this->request->getPost('name'));
+            unlink(ROOTPATH.'public/galeryImages/thumb_'.$this->request->getPost('name'));
             return redirect()->to( base_url('/galery'))->with('msg', 'Sikeres törlés');
         }
         catch(\Exception $e){
