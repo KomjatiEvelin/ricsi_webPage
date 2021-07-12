@@ -32,7 +32,7 @@
     font-family: Georgia, serif;
   }
 
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 900px) {
       
     #maincontainer{
       width:100%!important;
@@ -64,10 +64,6 @@
 
       .footer{
         font-size:10px;
-      }
-
-      #mobilenav{
-        overflow-y:auto!important;
       }
 
       .header-text{
@@ -220,7 +216,7 @@
       margin:20px;
     }
 
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (max-width: 900px) {
         #desktopnav{
             display:none;
         }
@@ -259,9 +255,8 @@
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  -ms-overflow-style: none; 
-  scrollbar-width: thin;
 }
+
 
 .flip-box:hover .flip-box-inner {
   transform: rotateY(180deg);
@@ -281,13 +276,18 @@
   
 }
 
+.flip-box-back::-webkit-scrollbar {
+  display:none;
+  
+}
+
 #hometitle,
 #first-img, #hometext{
-  animation: fadein linear 3s;
-  -webkit-animation: fadein linear 3s;
-  -moz-animation: fadein linear 3s;
-  -o-animation: fadein linear 3s;
-  -ms-animation: fadein linear 3s;
+  animation: fadein linear 2s;
+  -webkit-animation: fadein linear 2s;
+  -moz-animation: fadein linear 2s;
+  -o-animation: fadein linear 2s;
+  -ms-animation: fadein linear 2s;
 }
 
 </style>

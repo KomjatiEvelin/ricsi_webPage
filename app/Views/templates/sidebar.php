@@ -11,7 +11,7 @@
             <div class="flip-box-front" style="text-align:center; height:350px; max-height:85%; max-width:80%; display: flex; flex-direction: column; justify-content: center; padding:2px;">
                 <h5 style="font-size:2vh; padding:1px;">Kiemelt támogatónk</h5>
                 <h5 style="font-size:2.3vh; font-weight:bold; padding:1px;"><?= esc($datas_item['name']) ?></h5>
-                <div class="rounded-pill" style="background-image:url(<?= base_url(); ?>/images/sponsor_logos/<?= esc($datas_item['img'])?>); background-size:contain; background-repeat:no-repeat; background-position:center; height:75%; width:90%; ">
+                <div class="rounded-lg" style="background-image:url(<?= base_url(); ?>/images/sponsor_logos/<?= esc($datas_item['img'])?>); background-size:cover; background-repeat:no-repeat; background-position:center; height:70%; width:90%; ">
                 </div>
             </div>
             <div class="flip-box-back" style="height:90%; width:90%; world-break:normal; overflow-y:auto;">
