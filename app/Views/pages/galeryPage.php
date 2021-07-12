@@ -42,9 +42,11 @@
       <h3 style="width:100%; text-align:center; height:fit-content; padding-top:30px;">Videók</h3>
       <hr style="border-top:1px solid black; width:70%;">
       <div style="height:fit-content; width: 100%; vertical-align:middle; text-align:center">
+      <?php foreach ($videos as $video_item): ?>
         <video style="width:10vw; min-width:150px; height:8vw; min-height:100px; margin:3px;" controls>
-            <source src="<?= base_url(); ?>/video/IMG_3837.MOV" type="video/mp4">
+            <source src="<?= base_url(); ?>/video/<?= $video_item['name'] ?>" type="video/mp4">
         </video>
+      <?php endforeach; ?>
       </div>
 
 

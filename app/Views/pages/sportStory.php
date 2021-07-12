@@ -11,7 +11,7 @@
         <p>A monosí, más néven ülősí, egy egyedileg gyártott sporteszköz, amely egy fém vázzal
             körülvett ülőszerkezetből, egy állítható lengéscsillapítóból, hagyományos síkötésből és
             sílécből áll.</p>
-        <div style="width:fit-content; margin-left:auto; margin-right:auto;">
+        <div style="width:fit-content; margin:0; margin-left:auto; margin-right:auto;">
             <img src="<?= base_url(); ?>/images/ulosi_kep.jpg" alt="monosí eszköz képe" style="padding:5px; width:300px; max-width:100%;"/>
             <img src="<?= base_url(); ?>/images/simanko_kep.jpg" alt="sí mankó kép" style="padding:5px; width:300px; max-width:100%;"/>
         </div>
@@ -22,7 +22,7 @@
             úgynevezett sí mankó (outrigger). Ezek használatával oldalra kinyúlva indíthatjuk el íveket és
             szükség eseten stabilitást nyújtanak.</p>
         <p>A kategória csúcssebessége elérheti a 110-120km/órát is.</p>
-        <div style="width:fit-content; margin-left:auto; margin-right:auto;">
+        <div style="width:fit-content; margin:0; margin-left:auto; margin-right:auto;">
         <video width="320" height="240" controls>
             <source src="<?= base_url(); ?>/video/IMG_3837.MOV" type="video/mp4">
         </video>

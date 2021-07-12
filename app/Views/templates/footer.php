@@ -1,7 +1,7 @@
 </div>
 </div>
 <div class="footer p-2 m-2 rounded text-white" style="background-color:rgba(33, 37, 41,0.8); flex: 0 0 10%;">
-  <div style="width:fit-content; margin-left:auto; margin-right:auto;" >
+  <div style="width:fit-content; margin:0; margin-left:auto; margin-right:auto;" >
   <?php if (! empty($datas) && is_array($datas)) : 
     
     $footer=array();
