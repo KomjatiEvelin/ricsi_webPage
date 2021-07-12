@@ -9,7 +9,7 @@
     <div class="card flip-box" style="margin-top:25px; height:45%; color:white; background-color:rgba(0, 0, 0, 0); border:0pt;">
         <div class="card-body flip-box-inner" style="height:100%; width:100%; background-color:rgba(0, 0, 0, 0.5);">
             <div class="flip-box-front" style="text-align:center; height:350px; max-height:90%; max-width:90%; padding:2px;">
-                <h5 style="font-size:2vh; padding:1px;">Kiemelt támogatónk</h5>
+                <h5 id="card-title" style="font-size:2vh; padding:1px;">Kiemelt támogatónk</h5>
                 <h5 style="font-size:2.3vh; font-weight:bold; padding:1px;"><?= esc($datas_item['name']) ?></h5>
                 <div class="rounded-lg" style="background-image:url(<?= base_url(); ?>/images/sponsor_logos/<?= esc($datas_item['img'])?>); background-size:cover; background-repeat:no-repeat; background-position:center; height:70%; width:90%; margin:2px; margin-left:auto; margin-right:auto; ">
                 </div>

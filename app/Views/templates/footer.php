@@ -69,6 +69,31 @@
       .header-text{
         font-size:20px!important;
       }
+
+      .sidebar{
+        display:block!important;
+      }
+
+      .sidebar .card {
+        margin:5px!important;
+      }
+
+      .sponsorbar{
+        display:none!important;
+      }
+
+      #card-title{
+        display:none!important;
+      }
+
+      #maincontainer{
+        width:85%!important;
+      }
+
+      .flip-box *{
+        padding:2px;
+        margin:0;
+      }
     }
 
   }
@@ -178,7 +203,7 @@
     display:none;
   }
 
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 900px) {
     .sponsorbar{
           display:block;
       }
@@ -236,7 +261,7 @@
       scrollbar-width: none;  /* Firefox */
     }
 
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (max-width: 900px) {
         .sidebar{
               display:none;
           }

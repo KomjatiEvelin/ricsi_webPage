@@ -101,24 +101,24 @@ class Sponsors extends BaseController{
                 }
                 $image->move(ROOTPATH.'public/images/sponsor_logos/',strtolower($imgname));
                 $logo1 = \Config\Services::image()
-                    ->withFile(ROOTPATH.'public/images/sponsor_logos/'.strtolower($name))
+                    ->withFile(ROOTPATH.'public/images/sponsor_logos/'.strtolower($imgname))
                     ->resize(500, 500, true, 'width')
-                    ->save(ROOTPATH.'public/images/sponsor_logos/'.strtolower($name));
+                    ->save(ROOTPATH.'public/images/sponsor_logos/'.strtolower($imgname));
                 $sponsor=$model->getData($id);
                 if(isset($sponsor['img'])&&$sponsor['img']!="NULL"){
                     unlink('images/sponsor_logos/'.$sponsor['img']);
                 }
-                $model->updateSuperWithImg($name,strtolower($imgname),$text,$id);
+                $model->updateSuperWithImg($name,$imgname,$text,$id);
             }
             else
             {
                 $model->updateSuper($name,$text,$id);
             }
             
-            return redirect()->to( base_url('/upload'))->with('msg', 'Sikeres hozzáadás');
+            return redirect()->to( base_url('/upload'))->with('msg', 'Sikeres módosítás');
         }
         catch(\Exception $e){
-            return redirect()->to( base_url('/upload'))->with('msg', 'Sikertelen hozzáadás'.$e->getMessage());
+            return redirect()->to( base_url('/upload'))->with('msg', 'Sikertelen módosítás'.$e->getMessage());
         }
     }
    
