@@ -151,6 +151,21 @@ class Galery extends BaseController{
         }
     }
 
+    public function deleteVideo(){
+
+        try{
+            $model=new GaleryVideos();
+            if($this->request->getMethod()==='post'){
+                $model->deleteData($this->request->getPost('id'));
+            }
+            unlink(ROOTPATH.'public/video/'.$this->request->getPost('name'));
+            return redirect()->to( base_url('/galery'))->with('msg', 'Sikeres törlés');
+        }
+        catch(\Exception $e){
+            return redirect()->to( base_url('/galery'))->with('msg', 'Sikertelen törlés '.$e->getMessage());
+        }
+    }
+
     public function deleteYear(){
 
         try{

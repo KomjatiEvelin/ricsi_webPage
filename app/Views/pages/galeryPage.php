@@ -46,7 +46,14 @@
         <video style="width:10vw; min-width:150px; height:8vw; min-height:100px; margin:3px;" controls>
             <source src="<?= base_url(); ?>/video/<?= $video_item['name'] ?>" type="video/mp4">
         </video>
-      <?php endforeach; ?>
+        <?php if(session()->get('username')=="admin"){
+                        echo '<form method="post" action="/galery/deleteVideo">    
+                                <input type="hidden" value="'.$video_item['id'].'" name="id">
+                                <input type="hidden" value="'.$video_item['name'].'" name="name">
+                                <button type="submit" class="btn btn-danger">Töröl</button>
+                              </form>';
+                      }
+        endforeach; ?>
       </div>
 
 
