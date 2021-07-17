@@ -70,30 +70,6 @@
         font-size:20px!important;
       }
 
-      .sidebar{
-        display:block!important;
-      }
-
-      .sidebar .card {
-        margin:5px!important;
-      }
-
-      .sponsorbar{
-        display:none!important;
-      }
-
-      #card-title{
-        display:none!important;
-      }
-
-      #maincontainer{
-        width:85%!important;
-      }
-
-      .flip-box *{
-        padding:2px;
-        margin:0;
-      }
     }
 
   }
@@ -290,7 +266,7 @@
 }
 
 .flip-box-front, .flip-box-back {
-  position: absolute;
+
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
 }
@@ -298,21 +274,14 @@
 .flip-box-back {
   color: white;
   transform: rotateY(180deg);
+  position: absolute;
+  top:0;
+  margin:5px;
   
 }
 
 .flip-box-back::-webkit-scrollbar {
   display:none;
-  
-}
-
-#hometitle,
-#first-img, #hometext{
-  animation: fadein linear 2s;
-  -webkit-animation: fadein linear 2s;
-  -moz-animation: fadein linear 2s;
-  -o-animation: fadein linear 2s;
-  -ms-animation: fadein linear 2s;
 }
 
 </style>
