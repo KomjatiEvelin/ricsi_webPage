@@ -10,7 +10,8 @@
             </div>
             <div style="width:100%; margin:10px;">
                 <h5>Telefon</h5>
-                <a href="tel:003630123456"><h5>0036 30/123-4567</h5></a>
+                <a href="tel:06303546204"><h5>06 30 354 6204</h5></a>
+                <a href="tel:0637320320"><h5>06 37 320 320</h5></a>
             </div>
             
         </div>
@@ -21,7 +22,7 @@
             </div>
             <div style="width:100%;">
                 <h5>E-mail</h5>
-                <a href="mailto:testemail@email.hu"><h5>testemail@email.hu</h5></a>
+                <a href="mailto:richardsitksi@gmail.com"><h5>richardsitksi@gmail.com</h5></a>
             </div>
         </div>
 

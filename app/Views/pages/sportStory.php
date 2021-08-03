@@ -1,5 +1,5 @@
 <div class="content d-flex flex-wrap p-3 mt-4 mb-2 mr-3 rounded justify-content-center" style="min-height:90%; width:95%; color:white; background-color:rgba(0, 0, 0, 0.5);">
-    <div>
+    <div style="width:100%;">
         <h5 style="font-weight:bold;">A monosí</h5> 
         <p>egy olyan speciális sporteszköz, mely lehetővé teszi a sérült emberek számára a
         síelést. Talán egyetlen a sportok közül, mellyel egy mozgássérült ember ugyanazt az érzést

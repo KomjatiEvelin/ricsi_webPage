@@ -14,10 +14,6 @@
         
         <?php if(session()->get('username')=="admin"){
                echo '<button id="editBtn'.$datas_item['id'].'" type="submit" style="display:none;" class="btn btn-danger" onclick="openModalMobil('.$datas_item["id"].');" user-id="'.$datas_item["id"].'">Szerkeszt</button>';
-               echo '<form class="rounded" method="post" action="/sponsors/deleteSuper">   
-                      <input type="hidden" value="'.$datas_item['id'].'" name="id">
-                      <button type="submit" style="display:none;" id="delBtn'.$datas_item['id'].'" class="btn btn-danger">Töröl</button>
-                    </form>';
               }
         ?>
 

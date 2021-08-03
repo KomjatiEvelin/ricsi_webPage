@@ -6,7 +6,7 @@
     
     $footer=array();
     foreach($datas as $item){
-      if($item['level']>=3&&$item['level']<10){
+      if($item['level']>3&&$item['level']<10){
        array_push($footer,$item);
       }
     }
