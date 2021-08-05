@@ -9,7 +9,7 @@
         Bartos Ilona) támogatásával saját monosí birtokába kerültem. Úgy 8 éve sajátítottam el a
         monosí és a handbike sportok alapjait. </p> 
     
-    <div style="width:fit-content; margin:0; margin-left:auto; margin-right:auto;">
+    <div style="width:300px; margin:0 auto;">
         <iframe width="300" height="200" src="https://www.youtube.com/embed/S3hZx-_6oBY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <p>A 2020-as évben lehetőséget kaptam arra, hogy egy
@@ -21,7 +21,7 @@
         alatt van a fizikai erőnlétem és állóképességem. ebben edzőm, Szabó Mariann nyújt rengeteg
         segítséget. Emellett havonta 5-7 napot külföldi edzőtáborokban veszek részt, ahol a havas
         edzések napjainak számát igyekszünk gyarapítani és tapasztalatot gyűjteni.</p>
-    <div style="width:fit-content; margin:0; margin-left:auto; margin-right:auto;">
+    <div style="width:300px; margin:0 auto;">
         <iframe width="300" height="200" src="https://www.youtube.com/embed/MgqnX34kI6I?start=532" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     </div>

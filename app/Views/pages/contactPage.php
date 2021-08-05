@@ -3,7 +3,7 @@
     <div class="rounded" style="margin:5px; margin-left:auto; margin-right:auto; padding:2px; height:fit-content; width:90%; text-align:center; background-color:rgba(255, 255, 255, 0.8);">
         <h4 style="padding:20px;">Ha szeretne támogatni vagy kapcsolatba lépni velem, az alábbi módokon érhet el és egyeztethet velem:</h4>
     </div>
-    <div style="width:fit-content; height:fit-content; margin-left:auto; margin-right:auto;">
+    <div style="width:fit-content; height:fit-content; margin:0 auto;">
         <div id="contact1" class="rounded contact-card"  style="margin:5px; padding:2px; height:200px; width:300px; text-align:center; background-color:rgba(255, 255, 255, 0.8); float:left;">
             <div style="width:100%;  height:25%; margin:10px;">
                 <img src="<?= base_url(); ?>/images/phone_logo.png" alt="phone logo" style="height:100%; float:left;">

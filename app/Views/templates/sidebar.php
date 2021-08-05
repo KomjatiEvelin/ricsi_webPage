@@ -9,13 +9,13 @@
     <div class="card flip-box" style="margin-top:25px; height:45%; color:white; background-color:rgba(0, 0, 0, 0); border:0pt;">
         <div class="card-body flip-box-inner" style="height:100%; width:100%; background-color:rgba(0, 0, 0, 0.5);">
             <div class="flip-box-front" style="text-align:center; height:350px; max-height:90%; max-width:90%; padding:2px; overflow:hidden;">
-                <h5 id="card-title" style="font-size:2vh; padding:1px;">Kiemelt támogatónk</h5>
-                <h5 style="font-size:2.3vh; font-weight:bold; padding:1px;"><?= esc($datas_item['name']) ?></h5>
-                <div class="rounded-lg" style="background-image:url(<?= base_url(); ?>/images/sponsor_logos/<?= esc($datas_item['img'])?>); background-size:cover; background-repeat:no-repeat; background-position:center; height:80%; width:90%; margin:2px; margin-left:auto; margin-right:auto; ">
-                </div>
+                <h5 id="card-title" style="font-size:2.3vh; padding:3px;">Kiemelt támogatónk</h5>
+                <img class="rounded-lg" src="<?= base_url(); ?>/images/sponsor_logos/<?= esc($datas_item['img'])?>" style="max-height:90%; max-width:90%; margin:2px; margin-left:auto; margin-right:auto; "/>
+
             </div>
-            <div class="flip-box-back" style="height:90%; width:90%; world-break:normal; overflow-y:auto;">
-                <h5 style="font-size:2vh; color:white; padding:5px; margin:2px;"><?= esc($datas_item['info']) ?></h5>
+            <div class="flip-box-back" style="height:90%; width:90%; world-break:normal; overflow-y:auto; ">
+                <h4 style="font-size:2.3vh; font-weight:bold; padding:5px;"><?= esc($datas_item['name']) ?></h4>
+                <h5 style="font-size:2vh; color:white; padding:5px; padding-top:0px; margin:2px;"><?= esc($datas_item['info']) ?></h5>
             </div>
        
         </div>

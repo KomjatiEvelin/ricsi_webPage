@@ -1,12 +1,12 @@
 </div>
 </div>
 <div class="footer p-2 m-2 rounded text-white" style="background-color:rgba(33, 37, 41,0.8); flex: 0 0 10%;">
-  <div style="width:fit-content; margin:0; margin-left:auto; margin-right:auto;" >
+  <div style="width:fit-content; margin:0 auto; " >
   <?php if (! empty($datas) && is_array($datas)) : 
     
     $footer=array();
     foreach($datas as $item){
-      if($item['level']>3&&$item['level']<10){
+      if($item['level']>=3&&$item['level']<10){
        array_push($footer,$item);
       }
     }
@@ -267,8 +267,9 @@
 
 .flip-box-front, .flip-box-back {
 
-  -webkit-backface-visibility: hidden; /* Safari */
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  transform: rotateX(0deg);
 }
 
 .flip-box-back {
